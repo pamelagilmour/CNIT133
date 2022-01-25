@@ -1,0 +1,68 @@
+body {
+    background-image: linear-gradient(to bottom right, #BBBEFE, #E8BFFB);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    text-align: center;
+    
+}
+
+header {
+    padding-left: 2%;
+    font-family: 'VT323', monospace;
+    font-size: 5em;
+    color: #fff;
+
+}
+
+h1 {
+    font-size: 1em;
+    
+}
+
+section {
+    font-family: 'Lora', serif;
+    color: #fff;
+
+}
+
+li {
+    list-style: none;
+    padding: 2rem;
+
+}
+
+li a {
+    color: #fff;
+    border-bottom: wheat;
+    
+}
+
+a:link {
+    padding: 1.5rem;
+    border-style: groove;
+    border-top: none;
+    border-left: none;
+    border-radius: 20px;
+
+}
+
+a:visited {
+    color: violet;
+
+}
+
+a:hover {
+    color: #baffd8 !important;
+    background-color: #9ea3f5;
+
+}
+
+a:active {
+    color: #baffd8;
+
+}
+/* 
+font-family: 'Inter', sans-serif;
+font-family: 'Roboto Mono', monospace;
+*/
