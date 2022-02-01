@@ -8,14 +8,21 @@ body {
 }
 
 header {
-    padding-left: 2%;
+    padding: 2%;
     font-family: 'VT323', monospace;
     font-size: 5em;
     color: #fff;
 
 }
 
+nav {
+    padding-bottom: 2%;
+
+}
+
 h1 {
+    padding-top: 5%;
+    padding-bottom: 3%;
     font-size: 1em;
     
 }
