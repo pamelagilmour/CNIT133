@@ -22,6 +22,42 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
+    <style>
+    
+        .body {
+            width: 250px;
+            margin: 0px auto;
+        }
+
+        .black {
+            color: black;
+        }
+    </style>
+    
+    <script>
+        function process() {
+            var number1, number2, number3, n1, n2, n3, sum, average, product, smallest, largest;
+
+            number1 = document.forms["formA"].elements["num1"].value;
+            number2 = document.forms["formA"].elements["num2"].value;
+            number3 = document.forms["formA"].elements["num3"].value;
+
+            n1 = parseInt(number1);
+            n2 = parseInt(number2);
+            n3 = parseInt(number3);
+
+            sum = n1 + n2 + n3; 
+            average = (n1 + n2 + n3)/3; 
+            product = n1 * n2 * n3;
+
+            // write a conditional to find the smallest number and another to find the largest number, using &&
+            
+            document.forms["formA"].elements["result"].value = product;
+
+        }
+
+    </script>
+    
 </head>
 
 <body>
@@ -43,8 +79,45 @@
         <section class="col">
             <h1 class="row">Homework Page 2</h1>
             <ul>
-                <li><a href="hw2p1.html">Part 1</a></li>
-                <li><a>Part 2</a></li>
+                <li><a href="#">Part 1</a></li>
+
+                <script>
+                    document.write(
+                        "<p><strong><span style=\"font-family:Times New Roman;color:red\">ab</span> <span style=\"font-family:Arial;color:blue\">12</span> <em style=\"font-family:Impact;color:green\">34</em></strong></p>"
+                    );            
+                </script>
+
+                <li><a a href="#">Part 2</a></li>
+
+                <section class="body">
+                    <form name="formA">
+                        <table>
+                            <tr>
+                                <td>First Number:</td>
+                                <td><input type="text" name="num1" size="10" class="black"></td>
+                            </tr>
+                            <tr>
+                                <td>Second Number:</td>
+                                <td><input type="text" name="num2" size="10" class="black"></td>
+                            </tr>
+                            <tr>
+                                <td>Third Number:</td>
+                                <td><input type="text" name="num3" size="10" class="black"></td>
+                            </tr>
+
+                        </table>
+                        <br>
+                        <input type="button" onclick="process()" value="SUBMIT" class="black">
+                        <input type="reset" value="RESET" class="black">
+                        <table class="body">
+                            <tr>
+                                <td>Quotient is:</td>
+                                <td><input type="text" name="result" size="10"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </section>
+
                 <li><a>Part 3</a></li>
             </ul>
         </section>
