@@ -22,42 +22,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
-    <style>
-    
-        .body {
-            width: 250px;
-            margin: 0px auto;
-        }
-
-        .black {
-            color: black;
-        }
-    </style>
-    
-    <script>
-        function process() {
-            var number1, number2, number3, n1, n2, n3, sum, average, product, smallest, largest;
-
-            number1 = document.forms["formA"].elements["num1"].value;
-            number2 = document.forms["formA"].elements["num2"].value;
-            number3 = document.forms["formA"].elements["num3"].value;
-
-            n1 = parseInt(number1);
-            n2 = parseInt(number2);
-            n3 = parseInt(number3);
-
-            sum = n1 + n2 + n3; 
-            average = (n1 + n2 + n3)/3; 
-            product = n1 * n2 * n3;
-
-            // write a conditional to find the smallest number and another to find the largest number, using &&
-            
-            document.forms["formB"].elements["result"].value = product;
-
-        }
-
-    </script>
-    
 </head>
 
 <body>
@@ -73,52 +37,20 @@
             <a class="nav-link" href="hw6.html">Homework 6</a>
             <a class="nav-link" href="hw7.html">Homework 7</a>
             <a class="nav-link" href="hw8.html">Homework 8</a>
-            <a class="nav-link" href="hw2p1.html">Homework 2 Part 1</a>
+            <!-- <a class="nav-link" href="hw2p1.html">Homework 2 Part 1</a>
             <a class="nav-link" href="hw2p2.html">Homework 2 Part 2</a>
-            <a class="nav-link" href="hw2p3.html">Homework 2 Part 3</a>
+            <a class="nav-link" href="hw2p3.html">Homework 2 Part 3</a> -->
         </nav>
     </div>
     <div class="container">
         <section class="col">
             <h1 class="row">Homework Page 2</h1>
             <ul>
-                <li><a href="hw2p1.html">Part 1</a></li>
-                <!-- add a description for each "part" -->
+                <li><a href="hw2p1.html">Part 1 : display text</a></li>
 
-                <li><a a href="#">Part 2</a></li>
+                <li><a href="hw2p2.html">Part 2: input 3 integers</a></li>
 
-                <section class="body">
-                    <form name="formA">
-                        <table>
-                            <tr>
-                                <td>First Number:</td>
-                                <td><input type="text" name="num1" size="10" class="black"></td>
-                            </tr>
-                            <tr>
-                                <td>Second Number:</td>
-                                <td><input type="text" name="num2" size="10" class="black"></td>
-                            </tr>
-                            <tr>
-                                <td>Third Number:</td>
-                                <td><input type="text" name="num3" size="10" class="black"></td>
-                            </tr>
-
-                        </table>
-                        <br>
-                        <input type="button" onclick="process()" value="SUBMIT" class="black">
-                        <input type="reset" value="RESET" class="black">
-                        <form name="formB">
-                            <table class="body">
-                                <tr>
-                                    <td>Quotient is:</td>
-                                    <td><input type="text" name="result" size="10" class="black"></td>
-                                </tr>
-                            </table>
-                        </form>
-                    </form>
-                </section>
-
-                <li><a>Part 3</a></li>
+                <li><a href="hw2p3.html">Part 3: input 5 integers</a></li>
             </ul>
         </section>
     </div>
