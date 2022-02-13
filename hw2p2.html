@@ -20,10 +20,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
     <style>
-        /*  move styles to part 2 */
         .body {
             width: 250px;
             margin: 0px auto;
@@ -36,26 +36,47 @@
     
     <script>
         function process() {
-            var number1, number2, number3, n1, n2, n3, sum, average, product, smallest, largest;
+            let number1, number2, number3, n1, n2, n3, sum, average, product, smallest, largest;
 
             number1 = document.forms["formA"].elements["num1"].value;
             number2 = document.forms["formA"].elements["num2"].value;
             number3 = document.forms["formA"].elements["num3"].value;
 
+
             n1 = parseInt(number1);
             n2 = parseInt(number2);
             n3 = parseInt(number3);
 
-            sum = n1 + n2 + n3;
+            if (!Number.isInteger(n1) || !Number.isSafeInteger(n2) || !Number.isSafeInteger(n3)) {
+
+                return window.alert("One of the numbers you entered is not a number. Please reset your inputs and try again.")
+            }
+            
+            sum = (n1 + n2 + n3);
             average = (n1 + n2 + n3) / 3;
-            product = n1 * n2 * n3;
+            product = (n1 * n2 * n3);
+            smallest = Math.min(n1, n2, n3);
+            largest = Math.max(n1, n2, n3);
 
-            // write a conditional to find the smallest number and another to find the largest number, using &&
+            // console.log("n1 is:", n1, "n2 is:", n2, "n3 is:", n3, "sum is:", sum, "avg is:", average, "product is:", product, "smallest number:", smallest, "largest number:", largest);
 
-            document.forms["formB"].elements["result"].value = product;
+            document.forms["formB"].elements["result-sum"].value = sum;
+            document.forms["formB"].elements["result-avg"].value = average.toFixed(2);
+            document.forms["formB"].elements["result-prod"].value = product;
+            document.forms["formB"].elements["result-small"].value = smallest;
+            document.forms["formB"].elements["result-large"].value = largest;
 
+            
         }
-
+        
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(
+                function () {
+                    $(".fade-out").fadeTo("slow", 0.15);
+                });
+            });
     </script>
 </head>
 
@@ -65,7 +86,7 @@
     <div class="container">
         <nav class="nav row">
             <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link active" href="hw2.html">Homework 2</a>
+            <a class="nav-link active" href="hw2.html">Homework 2 Main</a>
             <a class="nav-link" href="hw2p1.html">Homework 2 Part 1</a>
             <a class="nav-link" href="hw2p2.html">Homework 2 Part 2</a>
             <a class="nav-link" href="hw2p3.html">Homework 2 Part 3</a>
@@ -75,45 +96,37 @@
     <div class="container">
         <section class="col">
             <h1 class="row">Homework Page 2 Part 2</h1>
-            <section class="body">
-                <form name="formA">
-                    <table>
-                        <tr>
-                            <td>First Number:</td>
-                            <td><input type="text" name="num1" size="10" class="black"></td>
-                        </tr>
-                        <tr>
-                            <td>Second Number:</td>
-                            <td><input type="text" name="num2" size="10" class="black"></td>
-                        </tr>
-                        <tr>
-                            <td>Third Number:</td>
-                            <td><input type="text" name="num3" size="10" class="black"></td>
-                        </tr>
-            
-                    </table>
-                    <br>
-                    <input type="button" onclick="process()" value="SUBMIT" class="black">
-                    <input type="reset" value="RESET" class="black">
-                    <form name="formB">
-                        <table class="body">
-                            <tr>
-                                <td>Quotient is:</td>
-                                <td><input type="text" name="result" size="10" class="black"></td>
-                            </tr>
-                        </table>
-                    </form>
-                </form>
-            </section>
+            <form name="formA">
+                First Number: <input class="black" type="text" name="num1" size="10"><br><br>
+                Second Number: <input class="black" type="text" name="num2" size="10"><br><br>
+                Third Number: <input class="black" type="text" name="num3" size="10"><br><br>
+                
+                <input class="black" type="button" onclick="process()" value="SUBMIT"><br><br>
+                <input class="black" type="reset" value="Reset Inputs"><br><br>
+            </form>
+            <form name="formB">
+                <label for="result-sum">Sum is: </label>
+                <textarea class="black fade-out" name="result-sum" rows="1" cols="10"></textarea>
+                <br><br>
+                <label for="result-avg">Average is: </label>
+                <textarea class="black fade-out" name="result-avg" rows="1" cols="10"></textarea>
+                <br><br>
+                <label for="result-prod">Product is: </label>
+                <textarea class="black fade-out" name="result-prod" rows="1" cols="10"></textarea>
+                <br><br>
+                <label for="result-prod">Smallest number is: </label>
+                <textarea class="black fade-out" name="result-small" rows="1" cols="10"></textarea>
+                <br><br>
+                <label for="result-prod">Largest number is: </label>
+                <textarea class="black fade-out" name="result-large" rows="1" cols="10"></textarea>
+                <br><br>
+                <input class="black" type="reset" value="Reset Outputs"><br><br>
 
-        </section>
+            </form>
+                <button class="black" type="button">Click to fade results</button><br><br>
 
+        </section>    
     </div>
-
-    <footer>
-
-    </footer>
-
 </body>
 
 </html>
