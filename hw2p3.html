@@ -22,6 +22,117 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
+    <style>
+        .body {
+            width: 250px;
+            margin: 0px auto;
+        }
+    
+        .black {
+            color: black;
+        }
+    </style>
+    
+    <script>
+        function process() {
+            let number1, number2, number3, number4, number5, n1, n2, n3, n4, n5;
+            let negCount = [];
+            let posiCount = [];
+            let zeroCount = [];
+
+            number1 = document.forms["formA3"].elements["num1"].value;
+            number2 = document.forms["formA3"].elements["num2"].value;
+            number3 = document.forms["formA3"].elements["num3"].value;
+            number4 = document.forms["formA3"].elements["num4"].value;
+            number5 = document.forms["formA3"].elements["num5"].value;
+
+            n1 = parseInt(number1);
+            n2 = parseInt(number2);
+            n3 = parseInt(number3);
+            n4 = parseInt(number4);
+            n5 = parseInt(number5);
+
+            if (!Number.isInteger(n1) || !Number.isSafeInteger(n2) || !Number.isSafeInteger(n3) || !Number.isInteger(n4) || !Number.isInteger(n5)) {
+
+                return window.alert("One of the numbers you entered is not a number. Please reset your inputs and try again.")
+            }
+
+            if (n1 < 0) {
+                negCount.push(n1);
+
+            }
+
+            if (n2 < 0) {
+                negCount.push(n2);
+
+            }
+
+            if (n3 < 0) {
+                negCount.push(n3);
+
+            }
+
+            if (n4 < 0) {
+                negCount.push(n4);
+
+            }
+            if (n5 < 0) {
+                negCount.push(n5);
+
+            }
+
+            if (n1 > 0) {
+                posiCount.push(n1);
+
+            }
+
+            if (n2 > 0) {
+                posiCount.push(n2);
+
+            }
+
+            if (n3 > 0) {
+                posiCount.push(n3);
+
+            }
+
+            if (n4 > 0) {
+                posiCount.push(n4);
+
+            }
+            if (n5 > 0) {
+                posiCount.push(n5);
+
+            }
+
+            if (n1 === 0) {
+                zeroCount.push(n1);
+
+            }
+
+            if (n2 === 0) {
+                zeroCount.push(n2);
+
+            }
+            if (n3 === 0) {
+                zeroCount.push(n3);
+            }
+
+            if (n4 === 0) {
+                zeroCount.push(n4);
+            }
+
+            if (n5 === 0) {
+                zeroCount.push(n5);
+            }
+
+            document.forms["formB3"].elements["neg-nums"].value = negCount.length;
+            document.forms["formB3"].elements["posi-nums"].value = posiCount.length;
+            document.forms["formB3"].elements["zero-count"].value = zeroCount.length;
+
+        }
+
+    </script>
 </head>
 
 <body>
@@ -41,6 +152,28 @@
     <div class="container">
         <section class="col">
             <h1 class="row">Homework Page 2 Part 3</h1>
+            <form name="formA3">
+                First Number: <input class="black" type="text" name="num1" size="10"><br><br>
+                Second Number: <input class="black" type="text" name="num2" size="10"><br><br>
+                Third Number: <input class="black" type="text" name="num3" size="10"><br><br>
+                Fourth Number: <input class="black" type="text" name="num4" size="10"><br><br>
+                Fifth Number: <input class="black" type="text" name="num5" size="10"><br><br>
+                <input class="black" type="button" onclick="process()" value="SUBMIT"><br><br>
+                <input class="black" type="reset" value="Reset Inputs"><br><br>
+            </form>
+            <form name="formB3">
+                <label for="neg-nums">Negative number count is: </label>
+                <textarea class="black" name="neg-nums" rows="1" cols="10"></textarea>
+                <br><br>
+                <label for="posi-nums">Positive number count is: </label>
+                <textarea class="black" name="posi-nums" rows="1" cols="10"></textarea>
+                <br><br>
+                <label for="zero-count">Zero count is: </label>
+                <textarea class="black" name="zero-count" rows="1" cols="10"></textarea>
+                <br><br>
+                <input class="black" type="reset" value="Reset Outputs"><br><br>
+            </form>
+
 
         </section>
 
