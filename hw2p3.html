@@ -18,7 +18,6 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700;900&family=Lora:ital@0;1&family=Roboto+Mono:wght@300&family=VT323&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
@@ -35,10 +34,12 @@
     
     <script>
         function process() {
+            // variable declared:
             let number1, number2, number3, number4, number5, n1, n2, n3, n4, n5;
             let negCount = [];
             let posiCount = [];
             let zeroCount = [];
+
 
             number1 = document.forms["formA3"].elements["num1"].value;
             number2 = document.forms["formA3"].elements["num2"].value;
@@ -52,11 +53,14 @@
             n4 = parseInt(number4);
             n5 = parseInt(number5);
 
+            
+            // conditional to check data type is a number.
             if (!Number.isInteger(n1) || !Number.isSafeInteger(n2) || !Number.isSafeInteger(n3) || !Number.isInteger(n4) || !Number.isInteger(n5)) {
 
                 return window.alert("One of the numbers you entered is not a number. Please reset your inputs and try again.")
             }
 
+            // conditionals to check for and count negative numbers, positive numbers and zeros.
             if (n1 < 0) {
                 negCount.push(n1);
 
@@ -126,6 +130,7 @@
                 zeroCount.push(n5);
             }
 
+            // reassign output boxes with new values
             document.forms["formB3"].elements["neg-nums"].value = negCount.length;
             document.forms["formB3"].elements["posi-nums"].value = posiCount.length;
             document.forms["formB3"].elements["zero-count"].value = zeroCount.length;
@@ -140,6 +145,7 @@
     <header class="header">CNIT 133 Homework 2 - Basic Operations</header>
     <div class="container">
         <nav class="nav row">
+            <!-- Nav Bar links -->
             <a class="nav-link" href="index.html">Home</a>
             <a class="nav-link active" href="hw2.html">Homework 2 Main</a>
             <a class="nav-link" href="hw2p1.html">Homework 2 Part 1</a>
@@ -152,7 +158,9 @@
     <div class="container">
         <section class="col">
             <h1 class="row">Homework Page 2 Part 3</h1>
+            <!-- Part 3 begins here: -->
             <form name="formA3">
+                <!-- Input boxes -->
                 First Number: <input class="black" type="text" name="num1" size="10"><br><br>
                 Second Number: <input class="black" type="text" name="num2" size="10"><br><br>
                 Third Number: <input class="black" type="text" name="num3" size="10"><br><br>
@@ -162,6 +170,7 @@
                 <input class="black" type="reset" value="Reset Inputs"><br><br>
             </form>
             <form name="formB3">
+                <!-- Output boxes -->
                 <label for="neg-nums">Negative number count is: </label>
                 <textarea class="black" name="neg-nums" rows="1" cols="10"></textarea>
                 <br><br>
@@ -182,6 +191,7 @@
     <footer>
 
     </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </body>
 
