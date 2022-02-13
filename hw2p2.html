@@ -24,6 +24,8 @@
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
     <style>
+        /* Part 2 scripts below: */
+        /*  Styling here: */
         .body {
             width: 250px;
             margin: 0px auto;
@@ -35,48 +37,57 @@
     </style>
     
     <script>
+        // Javascript for Part2 below:
         function process() {
+            // Declare variables
             let number1, number2, number3, n1, n2, n3, sum, average, product, smallest, largest;
 
+            // variable hold values from input boxes
             number1 = document.forms["formA"].elements["num1"].value;
             number2 = document.forms["formA"].elements["num2"].value;
             number3 = document.forms["formA"].elements["num3"].value;
 
-
+            // convert input to integer
             n1 = parseInt(number1);
             n2 = parseInt(number2);
             n3 = parseInt(number3);
 
+            // if input is not a number, alert the user to re-enter.
             if (!Number.isInteger(n1) || !Number.isSafeInteger(n2) || !Number.isSafeInteger(n3)) {
 
                 return window.alert("One of the numbers you entered is not a number. Please reset your inputs and try again.")
             }
-            
+
+            // Math operations
             sum = (n1 + n2 + n3);
             average = (n1 + n2 + n3) / 3;
             product = (n1 * n2 * n3);
             smallest = Math.min(n1, n2, n3);
             largest = Math.max(n1, n2, n3);
 
-            // console.log("n1 is:", n1, "n2 is:", n2, "n3 is:", n3, "sum is:", sum, "avg is:", average, "product is:", product, "smallest number:", smallest, "largest number:", largest);
-
+            // give output boxes values from Math operations
+            // document.forms["formB"].elements["span"].value = sum;
             document.forms["formB"].elements["result-sum"].value = sum;
             document.forms["formB"].elements["result-avg"].value = average.toFixed(2);
             document.forms["formB"].elements["result-prod"].value = product;
             document.forms["formB"].elements["result-small"].value = smallest;
             document.forms["formB"].elements["result-large"].value = largest;
+            console.log(document.forms["formB"].elements);
+
 
             
         }
         
     </script>
     <script>
-        $(document).ready(function () {
-            $("button").click(
-                function () {
-                    $(".fade-out").fadeTo("slow", 0.15);
-                });
-            });
+        // Javascript for 'Click to Fade' button
+        // Task: Use jQuery to define a ready handler that defines a click event handler for the button, such that clicking the button fades the results in the textarea or div where you put the results.
+        $(document).ready(
+            function() {
+
+            }
+        )
+
     </script>
 </head>
 
@@ -85,6 +96,7 @@
     <header class="header">CNIT 133 Homework 2 - Basic Operations</header>
     <div class="container">
         <nav class="nav row">
+            <!--  Nav Bar links -->
             <a class="nav-link" href="index.html">Home</a>
             <a class="nav-link active" href="hw2.html">Homework 2 Main</a>
             <a class="nav-link" href="hw2p1.html">Homework 2 Part 1</a>
@@ -96,17 +108,41 @@
     <div class="container">
         <section class="col">
             <h1 class="row">Homework Page 2 Part 2</h1>
+            <!-- Part 2 begins here: -->
             <form name="formA">
+                <!-- Input boxes -->
                 First Number: <input class="black" type="text" name="num1" size="10"><br><br>
                 Second Number: <input class="black" type="text" name="num2" size="10"><br><br>
                 Third Number: <input class="black" type="text" name="num3" size="10"><br><br>
-                
+                <!-- Input buttons -->
                 <input class="black" type="button" onclick="process()" value="SUBMIT"><br><br>
                 <input class="black" type="reset" value="Reset Inputs"><br><br>
             </form>
             <form name="formB">
+                <!-- Output section, might change to div, can't get the value of the text area to fade, only the entire element fades right now. -->
+                <!-- <label for="result-sum">Sum is: </label>
+                <div class="black fade-out result-sum"></div>
+                <br><br>
+                <label for="result-avg">Average is: </label>
+                <div class="black fade-out result-avg"></div>
+                <br><br>
+                <label for="result-prod">Product is: </label>
+                <div class="black fade-out result-prod"></div>
+                <br><br>
+                <label for="result-prod">Smallest number is: </label>
+                <div class="black fade-out result-small"></div>
+                <br><br>
+                <label for="result-prod">Largest number is: </label>
+                <div class="black fade-out result-large"></div>
+                <br><br>
+                <div class="black fade-out">Fade this</div> -->
+                <!-- <div><p>Sum is: <span class="fade-out" id="result-sum"></span></p></div> -->
                 <label for="result-sum">Sum is: </label>
-                <textarea class="black fade-out" name="result-sum" rows="1" cols="10"></textarea>
+                <div class="black fade-out" id="result-sum"></div>
+                <br><br>
+
+                <label for="result-sum">Sum is: </label>
+                <textarea class="black fade-out" id="result-sum" name="result-sum" rows="1" cols="10"></textarea>
                 <br><br>
                 <label for="result-avg">Average is: </label>
                 <textarea class="black fade-out" name="result-avg" rows="1" cols="10"></textarea>
@@ -120,11 +156,11 @@
                 <label for="result-prod">Largest number is: </label>
                 <textarea class="black fade-out" name="result-large" rows="1" cols="10"></textarea>
                 <br><br>
+                <!-- <div class="black fade-out">Fade this</div> -->
                 <input class="black" type="reset" value="Reset Outputs"><br><br>
 
             </form>
-                <button class="black" type="button">Click to fade results</button><br><br>
-
+            <button class="black" type="button">Click to fade results</button><br><br>
         </section>    
     </div>
 </body>
