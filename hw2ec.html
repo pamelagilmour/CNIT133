@@ -27,16 +27,36 @@
         $(document).ready(function(){
             $("h2").click(function() {
                 $("p").slideToggle("slow");
-            })
+            });
+            $("#textfield").focus(function () {
+                $(this).css('background-color', 'pink');
+            });
 
         });
-        $(document).ready(function() {
-            $
-        })
 
         function conversionMath() {
-            const usd, bp, cad, euro, yen, peso;
-            usd = document.
+            let number1, n1, brp;
+
+            number1 = document.forms["convertForm"].elements["usdInput"].value;
+
+            usdVal = parseInt(number1);
+
+            if (!Number.isInteger(usdVal)) {
+
+                return window.alert("The dollar amount you entered is not a number. Please try again.")
+            }
+
+            brp = usdVal * 0.89; 
+            cad = usdVal * 1.31;
+            euro = usdVal * 7.80;
+            yen = usdVal * 108.38;
+            peso = usdVal * 19.11;
+
+            document.forms["convertForm"].elements["brpVal"].value = brp.toFixed(2);
+            document.forms["convertForm"].elements["cadVal"].value = cad.toFixed(2);
+            document.forms["convertForm"].elements["euroVal"].value = euro.toFixed(2);
+            document.forms["convertForm"].elements["yenVal"].value = yen.toFixed(2);
+            document.forms["convertForm"].elements["pesoVal"].value = peso.toFixed(2);
 
         }
     </script>
@@ -53,7 +73,6 @@
             <a class="nav-link" href="hw2p1.html">Homework 2 Part 1</a>
             <a class="nav-link" href="hw2p2.html">Homework 2 Part 2</a>
             <a class="nav-link" href="hw2p3.html">Homework 2 Part 3</a>
-            <a class="nav-link" href="hw2ec.html">Homework 2 Part 3</a>
             <a class="nav-link" href="hw2ec.html">Extra Credit: USD Converter</a>
             <a class="nav-link" href="hw3.html">Homework 3</a>
 
@@ -71,49 +90,53 @@
             exchange values.</p>
             </div>
             <div class="row set-side-margins" style="padding-bottom: 10%;">
-                <table>
-                    <tr>
-                        <th style="text-align: center; padding: 5px;" colspan="3">Monetary Exchange Rates</th>
-                    </tr>
-                    <tr>
-                        <th style="text-align: right; padding: 5px; border-bottom-style: dotted">Currency</th>
-                        <th style="text-align: right; padding: 5px;border-bottom-style: dotted">Rate</th>
-                        <th style="text-align: right; padding: 5px;border-bottom-style: dotted">Value</th>
-                    </tr>
-                    <tr>
-                        <td style="text-align: right; padding: 5px;">British Pound</td>
-                        <td style="text-align: right; padding: 5px;">0.89</td>
-                        <td style="text-align: right; padding: 5px;"></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: right; padding: 5px;">Canadian Dollar</td>
-                        <td style="text-align: right; padding: 5px;">1.31</td>
-                        <td style="text-align: right; padding: 5px;"></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: right; padding: 5px;">Euro</td>
-                        <td style="text-align: right; padding: 5px;">7.80</td>
-                        <td style="text-align: right; padding: 5px; "></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: right; padding: 5px;">Japanese Yen</td>
-                        <td style="text-align: right; padding: 5px;">108.38</td>
-                        <td style="text-align: right; padding: 5px;"></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: right; padding: 5px;">Mexican Peso</td>
-                        <td style="text-align: right; padding: 5px;">19.11</td>
-                        <td style="text-align: right; padding: 5px;"></td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: bold; text-align: right; padding: 5px;" colspan="2">Enter Amount of U.S. Dollars</td>
-                        <td style="text-align: right; padding: 5px;"><input class="black" type="text" name="" size="10"></td>
-                
-                    </tr>
+                <form name="convertForm">
+                    <table>
+                        <tr>
+                            <th style="text-align: center; padding: 5px;" colspan="3">Monetary Exchange Rates</th>
+                        </tr>
+                        <tr>
+                            <th style="text-align: right; padding: 5px; border-bottom-style: dotted">Currency</th>
+                            <th style="text-align: right; padding: 5px;border-bottom-style: dotted">Rate</th>
+                            <th style="text-align: right; padding: 5px;border-bottom-style: dotted">Value</th>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right; padding: 5px;">British Pound</td>
+                            <td style="text-align: right; padding: 5px;">0.89</td>
+                            <td class="black" style="text-align: right; padding: 5px;"><input type="text" name="brpVal" size="10" readonly></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right; padding: 5px;">Canadian Dollar</td>
+                            <td style="text-align: right; padding: 5px;">1.31</td>
+                            <td class="black" style="text-align: right; padding: 5px;"><input type="text" name="cadVal" size="10" readonly></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right; padding: 5px;">Euro</td>
+                            <td style="text-align: right; padding: 5px;">7.80</td>
+                            <td class="black" style="text-align: right; padding: 5px; "><input type="text" name="euroVal" size="10" readonly></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right; padding: 5px;">Japanese Yen</td>
+                            <td style="text-align: right; padding: 5px;">108.38</td>
+                            <td class="black" style="text-align: right; padding: 5px;"><input type="text" name="yenVal" size="10" readonly></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right; padding: 5px;">Mexican Peso</td>
+                            <td style="text-align: right; padding: 5px;">19.11</td>
+                            <td class="black" style="text-align: right; padding: 5px;"><input type="text" name="pesoVal" size="10" readonly></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold; text-align: right; padding: 5px;" colspan="2">Enter Amount of U.S. Dollars</td>
+                            <td style="text-align: right; padding: 5px;"><input class="black" id="textfield" type="text" name="usdInput" size="10"></td>
                     
-                </table>
-                <input style="color: black" type="button" value="Get conversion" onclick="conversionMath">
+                        </tr>
+                    
+                    </table>
+                    <input class="black" type="button" onclick="conversionMath()" value="Submit">
 
+
+                </form>
+                
             </div>
             
         </section>
