@@ -72,7 +72,7 @@
             document.forms["formB"].elements["result-prod"].value = product;
             document.forms["formB"].elements["result-small"].value = smallest;
             document.forms["formB"].elements["result-large"].value = largest;
-            console.log(document.forms["formB"].elements);
+            // console.log(document.forms["formB"].elements);
 
 
             
@@ -85,8 +85,15 @@
             // that defines a click event handler for the button,
             function() {
                 $("button").on("click", () => {
+                    // $("textarea").hide();
+                    // $("input:text").animate();
+
+
+                    $("textarea").fadeTo("slow", 0.15);
+
+
                     // let fadeEle = $("textarea").val();
-                    $("textarea:text").val().fadeTo("slow", 0.15);
+                    // $("textarea:text").val().fadeTo("slow", 0.15);
 
                 })
                 // $("textarea").children().fadeTo("slow", 0.15);
@@ -161,25 +168,6 @@
                 <input class="black" type="reset" value="Reset Inputs"><br><br>
             </form>
             <form name="formB">
-                <!-- Output section, might change to div, can't get the value of the text area to fade, only the entire element fades right now. -->
-                <!-- <label for="result-sum">Sum is: </label>
-                <div class="black fade-out result-sum"></div>
-                <br><br>
-                <label for="result-avg">Average is: </label>
-                <div class="black fade-out result-avg"></div>
-                <br><br>
-                <label for="result-prod">Product is: </label>
-                <div class="black fade-out result-prod"></div>
-                <br><br>
-                <label for="result-prod">Smallest number is: </label>
-                <div class="black fade-out result-small"></div>
-                <br><br>
-                <label for="result-prod">Largest number is: </label>
-                <div class="black fade-out result-large"></div>
-                <br><br>
-                <div class="black fade-out">Fade this</div> -->
-                <!-- <div><p>Sum is: <span class="fade-out" id="result-sum"></span></p></div> -->
-
                 <label for="result-sum">Sum is: </label>
                 <textarea class="black fade-out" id="result-sum" name="result-sum" rows="1" cols="10"></textarea>
                 <br><br>

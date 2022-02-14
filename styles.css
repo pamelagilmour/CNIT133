@@ -27,6 +27,12 @@ h1 {
     
 }
 
+p {
+    /* hw2ec.html */
+    font-size: 1.5rem;
+
+}
+
 section {
     font-family: 'Lora', serif;
     color: #fff;
@@ -70,23 +76,33 @@ a:active {
 
 }
 
-table {
-    /* display: table; */
-    /* border-spacing: 5px; */
-
+#instructions {
+    /* hw2ec.html */
+    padding-bottom: 20px;
 }
+
+table {
+    margin-top: 5%;
+    margin-bottom: 50%;
+    margin-left: 36%;
+    margin-right: 36%;
+    width: 25%;
+}
+
+/* Not working for some reason */
 
 th {
-    /* padding: 5px; */
     border: 1px solid;
-
+    
 }
+
 
 td {
     border: 1px dotted;
-    /* padding: 5px; */
 
 }
+
+
 /* 
 font-family: 'Inter', sans-serif;
 font-family: 'Roboto Mono', monospace;

@@ -11,7 +11,7 @@
     <meta property="og:description" content="Homework 2" />
     <meta property="og:image" content="https://i.imgur.com/25Hlt2f.jpeg" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -20,17 +20,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
     <script>
-        document.ready(function(){
-            $("#instructions").click(function() {
-                $(".actual-instruct").slideToggle("slow");
+        $(document).ready(function(){
+            $("h2").click(function() {
+                $("p").slideToggle("slow");
             })
 
-        }
-
-        )
+        });
     </script>
 </head>
 
@@ -55,55 +54,56 @@
         <section class="col">
             <h1 class="row">Homework Page 2 Extra Credit</h1>
             <!-- Extra Credit starts here: -->
-           <div id="instructions">Click to Show/Hide Instructions</div>
-           <div>
-               <p class="actual-instruct">The foreign exchange rates in July 2019</p>
-               <p class="actual-instruct">Enter a dollar amount in the table below to see the corresponding foreign
+           <h2 class="row" id="instructions">Click to Show/Hide Instructions</h2>
+           <div class="col">
+               <p class="row actual-instruct">The foreign exchange rates in July 2019</p>
+               <p class="row actual-instruct">Enter a dollar amount in the table below to see the corresponding foreign
             exchange values.</p>
             </div>
-            <table style="text-align: right;">
-                <tr style="font-weight: bold;">
-                    <th style="text-align: center; padding: 5px;" colspan="3">Monetary Exchange Rates</th>
+            <div class="row set-side-margins">
+                <table>
+                    <tr>
+                        <th style="text-align: center; padding: 5px;" colspan="3">Monetary Exchange Rates</th>
+                    </tr>
+                    <tr>
+                        <th style="text-align: right; padding: 5px; border-bottom-style: dotted">Currency</th>
+                        <th style="text-align: right; padding: 5px;border-bottom-style: dotted">Rate</th>
+                        <th style="text-align: right; padding: 5px;border-bottom-style: dotted">Value</th>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right; padding: 5px;">British Pound</td>
+                        <td style="text-align: right; padding: 5px;">0.89</td>
+                        <td style="text-align: right; padding: 5px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right; padding: 5px;">Canadian Dollar</td>
+                        <td style="text-align: right; padding: 5px;">1.31</td>
+                        <td style="text-align: right; padding: 5px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right; padding: 5px;">Euro</td>
+                        <td style="text-align: right; padding: 5px;">7.80</td>
+                        <td style="text-align: right; padding: 5px; "></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right; padding: 5px;">Japanese Yen</td>
+                        <td style="text-align: right; padding: 5px;">108.38</td>
+                        <td style="text-align: right; padding: 5px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right; padding: 5px;">Mexican Peso</td>
+                        <td style="text-align: right; padding: 5px;">19.11</td>
+                        <td style="text-align: right; padding: 5px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold; text-align: right; padding: 5px;" colspan="2">Enter Amount of U.S. Dollars</td>
+                        <td style="text-align: right; padding: 5px;"></td>
+                
+                    </tr>
+                </table>
 
-                </tr>
-                <tr style="font-weight: bold;">
-                    <th style="text-align: right; padding: 5px;">Currency</th>
-                    <th style="padding: 5px;">Rate</th>
-                    <th style="padding: 5px;">Value</th>
-                </tr>
-                <tr>
-                    <td style="padding: 5px;">British Pound</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td style="padding: 5px;">Canadian Dollar</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td style="padding: 5px;">Euro</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td style="padding: 5px;">Japanese Yen</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td style="padding: 5px;">Mexican Peso</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td style="font-weight: bold; padding: 5px;">Enter Amount of U.S. Dollars</td>
-                    <td colspan="2"></td>
-
-                </tr>
-            </table>
-
-
+            </div>
+            
         </section>
 
     </div>
