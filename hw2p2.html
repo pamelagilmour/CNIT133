@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
     <style>
@@ -77,18 +77,60 @@
 
             
         }
-        
-    </script>
-    <script>
-        // Javascript for 'Click to Fade' button
-        // Task: Use jQuery to define a ready handler that defines a click event handler for the button, such that clicking the button fades the results in the textarea or div where you put the results.
+        // Javascript for 'Click to Fade' button:
+
+        // Task: Use jQuery to define a ready handler
         $(document).ready(
+
+            // that defines a click event handler for the button,
             function() {
+                $("button").on("click", () => {
+                    // let fadeEle = $("textarea").val();
+                    $("textarea:text").val().fadeTo("slow", 0.15);
 
-            }
-        )
+                })
+                // $("textarea").children().fadeTo("slow", 0.15);
+                // $("button").click(function() {
+                    // const qtextarea = $("textarea");
+                    // console.log(qtextarea);
+                    // qtextarea.fadeTo("slow", 0.15);
+                    // qtextarea.hide();
 
+
+
+                    // $("textarea").fadeTo("slow", 0.15);
+
+                    // $("textarea").val(function() {
+
+                        // return $("val").fadeTo("slow", 0.15);
+                        
+                    // })
+
+                        // These don't work
+                    // $("textarea:value").fadeTo("slow", 0.15);
+                    // $("textarea").on("blur", function () {
+                    //     $(this).val(function (i, val) {
+                    //         return val.toUpperCase();
+                    //     });
+                    // });
+
+                    // clicking the button fades the results in the textarea or div where you put the results.
+
+                    // console.log($("textarea").val());
+                    // $("textarea").val(this.fadeTo("slow", 0.15));
+                    // $("textarea").val().fadeTo("slow", 0.15);
+                    // $("textarea").val.fadeTo("slow", 0.15)
+                        // .fadeTo("slow", 0.15);
+                    // console.log(val());
+
+                })
+
+            // }
+        // )
     </script>
+
+
+
 </head>
 
 <body>
@@ -137,9 +179,6 @@
                 <br><br>
                 <div class="black fade-out">Fade this</div> -->
                 <!-- <div><p>Sum is: <span class="fade-out" id="result-sum"></span></p></div> -->
-                <label for="result-sum">Sum is: </label>
-                <div class="black fade-out" id="result-sum"></div>
-                <br><br>
 
                 <label for="result-sum">Sum is: </label>
                 <textarea class="black fade-out" id="result-sum" name="result-sum" rows="1" cols="10"></textarea>

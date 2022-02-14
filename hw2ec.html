@@ -22,6 +22,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
+    <script>
+        document.ready(function(){
+            $("#instructions").click(function() {
+                $(".actual-instruct").slideToggle("slow");
+            })
+
+        }
+
+        )
+    </script>
 </head>
 
 <body>
@@ -45,10 +55,10 @@
         <section class="col">
             <h1 class="row">Homework Page 2 Extra Credit</h1>
             <!-- Extra Credit starts here: -->
-           <div>Click to Show/Hide Instructions</div>
+           <div id="instructions">Click to Show/Hide Instructions</div>
            <div>
-               <p>The foreign exchange rates in July 2019</p>
-               <p>Enter a dollar amount in the table below to see the corresponding foreign
+               <p class="actual-instruct">The foreign exchange rates in July 2019</p>
+               <p class="actual-instruct">Enter a dollar amount in the table below to see the corresponding foreign
             exchange values.</p>
             </div>
             <table style="text-align: right;">
