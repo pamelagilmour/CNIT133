@@ -47,7 +47,7 @@
             number4 = document.forms["formA3"].elements["num4"].value;
             number5 = document.forms["formA3"].elements["num5"].value;
 
-            n1 = parseInt(number1);
+            n1 = parseInt(number1); 
             n2 = parseInt(number2);
             n3 = parseInt(number3);
             n4 = parseInt(number4);
@@ -172,13 +172,13 @@
             </form>
             <form name="formB3">
                 <!-- Output boxes -->
-                <label for="neg-nums">Negative number count is: </label>
+                <label for="neg-nums" id="neg-nums">Negative number count is: </label>
                 <textarea class="black" name="neg-nums" rows="1" cols="10"></textarea>
                 <br><br>
-                <label for="posi-nums">Positive number count is: </label>
+                <label for="posi-nums" id="posi-nums">Positive number count is: </label>
                 <textarea class="black" name="posi-nums" rows="1" cols="10"></textarea>
                 <br><br>
-                <label for="zero-count">Zero count is: </label>
+                <label for="zero-count" id="zero-count">Zero count is: </label>
                 <textarea class="black" name="zero-count" rows="1" cols="10"></textarea>
                 <br><br>
                 <input class="black" type="reset" value="Reset Outputs"><br><br>
