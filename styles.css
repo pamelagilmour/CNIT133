@@ -107,13 +107,20 @@ font-family: 'Roboto Mono', monospace;
 */
 /* 576px, 768px, 992px */
 @media screen and (max-width: 992px) {
-    body {
-        background-color: blue;
-    }
-    nav > li > a {
-
-        background-color: yellow;
-
+    a:link {
+        color: purple;
+        padding: 0;
+        border-style: none;
+        border-radius: 0;
     }
 
 }
+
+/* @media screen and (max-width: 768px) {
+    
+
+}
+
+@media screen and (max-width: 576px) {
+
+} */
