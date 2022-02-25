@@ -48,11 +48,13 @@
             n2 = parseInt(number2);
             n3 = parseInt(number3);
 
-            // if input is not a number, alert the user to re-enter.
-            if (!Number.isInteger(n1) || !Number.isSafeInteger(n2) || !Number.isSafeInteger(n3)) {
+            console.log( n1, n2, n3);
 
+            // if input is not a number, alert the user to re-enter.
+            if (!Number.isInteger(n1) || !Number.isInteger(n2) || !Number.isInteger(n3)) {
                 return window.alert("One of the numbers you entered is not a number. Please reset your inputs and try again.")
             }
+
 
             // Math operations
             sum = (n1 + n2 + n3);
@@ -60,6 +62,7 @@
             product = (n1 * n2 * n3);
             smallest = Math.min(n1, n2, n3);
             largest = Math.max(n1, n2, n3);
+            
 
             // give output boxes values from Math operations
             // document.forms["formB"].elements["span"].value = sum;
