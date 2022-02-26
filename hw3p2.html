@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
     <style>
@@ -32,70 +33,70 @@
     </style>
 
     <script>
-        // Javascript for Part2 below:
-        function process() {
+        // // Javascript for Part2 below:
+        // function process() {
 
-            // variable hold values from input boxes
-            const hwAvg = document.forms["formA"].elements["hwAvgInt"].value;
-            const midTerm = document.forms["formA"].elements["midTermInt"].value;
-            const final = document.forms["formA"].elements["finalInt"].value;
-            const partic = document.forms["formA"].elements["particInt"].value;
+        //     // variable hold values from input boxes
+        //     const hwAvg = document.forms["formA"].elements["hwAvgInt"].value;
+        //     const midTerm = document.forms["formA"].elements["midTermInt"].value;
+        //     const final = document.forms["formA"].elements["finalInt"].value;
+        //     const partic = document.forms["formA"].elements["particInt"].value;
 
-            // input is between 0-100
+        //     // input is between 0-100
 
-            if (hwAvg < 101 && hwAvg > 0) {
-                console.log(hwAvg)
-            } else {
-                alert('The Homework Average is NOT a valid number.')
-            }
+        //     if (hwAvg < 101 && hwAvg > 0) {
+        //         console.log(hwAvg)
+        //     } else {
+        //         alert('The Homework Average is NOT a valid number.')
+        //     }
 
-            if (midTerm < 101 && midTerm > 0) {
-                console.log(midTerm);
-            } else {
-                alert('The Mid-Term value is NOT a valid number.')
-            }
+        //     if (midTerm < 101 && midTerm > 0) {
+        //         console.log(midTerm);
+        //     } else {
+        //         alert('The Mid-Term value is NOT a valid number.')
+        //     }
 
-            if (final < 101 && final > 0) {
-                console.log(final)
-            } else {
-                alert('The Final Exam value is NOT a valid number.');
-            }
+        //     if (final < 101 && final > 0) {
+        //         console.log(final)
+        //     } else {
+        //         alert('The Final Exam value is NOT a valid number.');
+        //     }
 
-            if (partic < 101 && partic > 0) {
-                console.log(partic)
-            } else {
-                alert('The participation value is NOT a valid number.')
-            }
+        //     if (partic < 101 && partic > 0) {
+        //         console.log(partic)
+        //     } else {
+        //         alert('The participation value is NOT a valid number.')
+        //     }
 
-            // Given calculation
-            const finalAvg = (.5 * hwAvg) + (.2 * midTerm) + (.2 * final) + (.1 * partic);
+        //     // Given calculation
+        //     const finalAvg = (.5 * hwAvg) + (.2 * midTerm) + (.2 * final) + (.1 * partic);
 
 
 
-            // if input is not a number, alert the user to re-enter.
-            // if (!Number.isInteger(n1) || !Number.isInteger(n2) || !Number.isInteger(n3) || !Number.isInteger(n4)) {
-            //     return window.alert("One of the numbers you entered is not a number. Please reset your inputs and try again.")
-            // }
+        //     // if input is not a number, alert the user to re-enter.
+        //     // if (!Number.isInteger(n1) || !Number.isInteger(n2) || !Number.isInteger(n3) || !Number.isInteger(n4)) {
+        //     //     return window.alert("One of the numbers you entered is not a number. Please reset your inputs and try again.")
+        //     // }
 
-            // give output box the value from given calculation
-            document.forms["formB"].elements["result-final"].value = Math.round(finalAvg);
+        //     // give output box the value from given calculation
+        //     document.forms["formB"].elements["result-final"].value = Math.round(finalAvg);
 
-            if (finalAvg > 89 && finalAvg < 101) {
-                document.forms["formB"].elements["letter-grade"].value = 'A';
-            } else if (finalAvg > 79 && finalAvg < 90) {
-                document.forms["formB"].elements["letter-grade"].value = 'B';
-            } else if (finalAvg > 69 && finalAvg < 80) {
-                document.forms["formB"].elements["letter-grade"].value = 'C';
-            } else if (finalAvg > 59 && finalAvg < 70) {
-                document.forms["formB"].elements["letter-grade"].value = 'D';
-                document.getElementById('grade-msg').innerHTML = '<span>Student must retake the course.</span>'
+        //     if (finalAvg > 89 && finalAvg < 101) {
+        //         document.forms["formB"].elements["letter-grade"].value = 'A';
+        //     } else if (finalAvg > 79 && finalAvg < 90) {
+        //         document.forms["formB"].elements["letter-grade"].value = 'B';
+        //     } else if (finalAvg > 69 && finalAvg < 80) {
+        //         document.forms["formB"].elements["letter-grade"].value = 'C';
+        //     } else if (finalAvg > 59 && finalAvg < 70) {
+        //         document.forms["formB"].elements["letter-grade"].value = 'D';
+        //         document.getElementById('grade-msg').innerHTML = '<span>Student must retake the course.</span>'
 
-            } else if (finalAvg > -1 && finalAvg < 60) {
-                document.forms["formB"].elements["letter-grade"].value = 'F';
-            } else {
-                document.forms["formB"].elements["letter-grade"].value = 'N/A';
-            }
-        }
+        //     } else if (finalAvg > -1 && finalAvg < 60) {
+        //         document.forms["formB"].elements["letter-grade"].value = 'F';
+        //     } else {
+        //         document.forms["formB"].elements["letter-grade"].value = 'N/A';
+        //     }
+        // }
 
     </script>
 </head>
@@ -121,7 +122,7 @@
             <h2>Student Grades</h2>
             <form name="formA">
                 <!-- Input boxes -->
-                Homework Average: <input class="black" type="text" name="hwAvgInt" size="10"><br><br>
+                Salesperson's Name: <input class="black" type="text" name="hwAvgInt" size="10"><br><br>
                 Mid-Term Exam Score: <input class="black" type="text" name="midTermInt" size="10"><br><br>
                 Final Exam Score: <input class="black" type="text" name="finalInt" size="10"><br><br>
                 Participation: <input class="black" type="text" name="particInt" size="10"><br><br>
