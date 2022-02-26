@@ -18,6 +18,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700;900&family=Lora:ital@0;1&family=Roboto+Mono:wght@300&family=VT323&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
@@ -33,6 +34,9 @@
     </style>
 
     <script>
+        $( function() {
+            $( document ).tooltip();
+        })
         // // Javascript for Part2 below:
         // function process() {
 
@@ -118,19 +122,61 @@
     </div>
     <div class="container">
         <section class="col">
-            <h1 class="row">Homework Page 3</h1>
-            <h2>Student Grades</h2>
+            <h1 class="row">Homework Page 3 - Part 2</h1>
+
             <form name="formA">
                 <!-- Input boxes -->
-                Salesperson's Name: <input class="black" type="text" name="hwAvgInt" size="10"><br><br>
-                Mid-Term Exam Score: <input class="black" type="text" name="midTermInt" size="10"><br><br>
-                Final Exam Score: <input class="black" type="text" name="finalInt" size="10"><br><br>
-                Participation: <input class="black" type="text" name="particInt" size="10"><br><br>
+                Salesperson's Name: <input title="Please make sure that the salesperson's name is spelled correctly." class="black" type="text" name="hwAvgInt" size="10"><br><br>
+                <h2>Input the number of items sold for each item number:</h2>
+                Item 1: <input class="black" type="text" name="midTermInt" size="10"><br><br>
+                Item 2: <input class="black" type="text" name="finalInt" size="10"><br><br>
+                Item 3: <input class="black" type="text" name="particInt" size="10"><br><br>
+                Item 4: <input class="black" type="text" name="particInt" size="10"><br><br>
                 <!-- Input buttons -->
                 <input class="black" type="button" onclick="process()" value="SUBMIT"><br><br>
                 <input class="black" type="reset" value="Reset Inputs"><br><br>
             </form>
             <form name="formB">
+                <table>
+                    <tr>
+                        <th>Item #</th>
+                        <th>Price</th>
+                        <th>Number Sold</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>$239.99</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>$129.99</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>$99.95</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>$350.89</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Total Amount Sold:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Total Weekly Earnings:</td>
+                        <td></td>
+                    </tr>
+                </table>
                 <label for="result-final">Student's Final Average is: </label>
                 <textarea class="black" id="result-final" name="result-final" rows="1" cols="10"></textarea><br><br>
                 <div id="grade-msg"></div><br>
