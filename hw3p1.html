@@ -41,41 +41,32 @@
             const final = document.forms["formA"].elements["finalInt"].value;
             const partic = document.forms["formA"].elements["particInt"].value;
 
+             // if input is not a number, alert the user to re-enter.
+            if (isNaN(hwAvg) || isNaN(midTerm) || isNaN(final) || isNaN(partic)) {
+                return window.alert("One of the numbers you entered is not a number. Please reset your inputs and try again.")
+            }
+
             // input is between 0-100
 
-            if ( hwAvg < 101 && hwAvg > 0 ) {
-                console.log(hwAvg)
-            } else {
+            if ( hwAvg > 101 || hwAvg < 0 ) {
                 alert('The Homework Average is NOT a valid number.')
             }
 
-            if (midTerm < 101 && midTerm > 0) {
-                console.log(midTerm);
-            } else {
+            if (midTerm > 101 || midTerm < 0) {
                 alert('The Mid-Term value is NOT a valid number.')
             }
 
-            if (final < 101 && final > 0) {
-                console.log(final)
-            } else {
+            if (final > 101 || final < 0) {
                 alert('The Final Exam value is NOT a valid number.');
             }
 
-            if (partic < 101 && partic > 0) {
-                console.log(partic)
-            } else {
+            if (partic > 101 || partic < 0) {
                 alert('The participation value is NOT a valid number.')
             }
 
             // Given calculation
             const finalAvg = (.5 * hwAvg) + (.2 * midTerm) + (.2 * final) + (.1 * partic);
 
-
-
-            // if input is not a number, alert the user to re-enter.
-            // if (!Number.isInteger(n1) || !Number.isInteger(n2) || !Number.isInteger(n3) || !Number.isInteger(n4)) {
-            //     return window.alert("One of the numbers you entered is not a number. Please reset your inputs and try again.")
-            // }
 
             // give output box the value from given calculation
             document.forms["formB"].elements["result-final"].value = Math.round(finalAvg);

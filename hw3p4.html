@@ -56,7 +56,6 @@
             const int2 = document.getElementById("int2").innerHTML;
 
             const answer = int1 * int2;
-            console.log(userInt, int1, int2, answer);
 
 
             // check if input is an number
@@ -69,14 +68,31 @@
                 console.log(convertInt, typeof convertInt, answer, typeof answer);
                 document.getElementById("msg").innerHTML = `<h3>Very good!</h3><br>`;
 
-            } else {
-                console.log(convertInt, typeof convertInt, answer, typeof answer);
+            } else if (convertInt !== answer) {
+                console.log('incorrect', convertInt, typeof convertInt, answer, typeof answer);
                 document.getElementById("msg").innerHTML = `<h3>Incorrect, please try again.</h3><br>`;
 
             }
 
             document.forms["formA"].elements["result"].value = answer;
+            
+            if (convertInt === answer) {
 
+                let text = "Very good! Would you like to continue with a new question?";
+
+                if (confirm(text) == true) {
+
+                    myPrompt();
+                    document.forms["formA"].elements["userInput"].value = "";
+                    document.forms["formA"].elements["result"].value = "";
+                    document.getElementById("msg").innerHTML = `<h3></h3><br>`;
+
+                }
+
+            } else if (convertInt != answer) {
+                    document.forms["formA"].elements["userInput"].value = "";
+
+            }
         }
 
     </script>
@@ -102,7 +118,6 @@
 
             <form name="formA">
                 <!-- Prompt -->
-                <!-- <input class="black" style="margin: 20px;" type="button" onclick="myPrompt()" value="Click to Begin Multiplication Practice"> -->
                 <div id="question"></div>
 
                 <!-- Input boxes -->
