@@ -31,6 +31,10 @@
             width: 250px;
             margin: 0px auto;
         }
+        .ui-tooltip {
+            opacity: 1;
+            background: white;
+	    }
     </style>
 
     <script>
@@ -38,49 +42,57 @@
             $( document ).tooltip();
         })
         // // Javascript for Part2 below:
-        // function process() {
-
-        //     // variable hold values from input boxes
-        //     const hwAvg = document.forms["formA"].elements["hwAvgInt"].value;
-        //     const midTerm = document.forms["formA"].elements["midTermInt"].value;
-        //     const final = document.forms["formA"].elements["finalInt"].value;
-        //     const partic = document.forms["formA"].elements["particInt"].value;
-
-        //     // input is between 0-100
-
-        //     if (hwAvg < 101 && hwAvg > 0) {
-        //         console.log(hwAvg)
-        //     } else {
-        //         alert('The Homework Average is NOT a valid number.')
-        //     }
-
-        //     if (midTerm < 101 && midTerm > 0) {
-        //         console.log(midTerm);
-        //     } else {
-        //         alert('The Mid-Term value is NOT a valid number.')
-        //     }
-
-        //     if (final < 101 && final > 0) {
-        //         console.log(final)
-        //     } else {
-        //         alert('The Final Exam value is NOT a valid number.');
-        //     }
-
-        //     if (partic < 101 && partic > 0) {
-        //         console.log(partic)
-        //     } else {
-        //         alert('The participation value is NOT a valid number.')
-        //     }
-
-        //     // Given calculation
-        //     const finalAvg = (.5 * hwAvg) + (.2 * midTerm) + (.2 * final) + (.1 * partic);
+        function process() {
+            let i1, i2, i3, i4;
 
 
+            // variable hold values from input boxes
+            const salesName = document.forms["formA"].elements["salesNameInt"].value;
+            const item1 = document.forms["formA"].elements["item1Int"].value;
+            const item2 = document.forms["formA"].elements["item2Int"].value;
+            const item3 = document.forms["formA"].elements["item3Int"].value;
+            const item4 = document.forms["formA"].elements["item4Int"].value;
 
-        //     // if input is not a number, alert the user to re-enter.
-        //     // if (!Number.isInteger(n1) || !Number.isInteger(n2) || !Number.isInteger(n3) || !Number.isInteger(n4)) {
-        //     //     return window.alert("One of the numbers you entered is not a number. Please reset your inputs and try again.")
-        //     // }
+
+            if (isNaN(item1) || item1 < 0) {
+                alert('The number for Item 1 is NOT valid.');
+            }
+
+            if (isNaN(item2) || item2 < 0) {
+                alert('The number for Item 2 is NOT valid.')
+            }
+
+            if (isNaN(item3) || item3 < 0) {
+                alert('The number for Item 3 is NOT valid.')
+            }
+
+            if (isNaN(item4) || item4 < 0) {
+                alert('The number for Item 4 is NOT valid.')
+            }
+
+            i1 = parseFloat(item1).toFixed(2);
+            console.log(i1);
+            i2 = parseFloat(item2).toFixed(2);
+            console.log(i2);
+            i3 = parseFloat(item3).toFixed(2);
+            console.log(i3);
+            i4 = parseFloat(item4).toFixed(2);
+            console.log(i4);
+
+
+
+
+            // input are integers
+            // if (!Number.isInteger(item1) || !Number.isInteger(item2) || !Number.isInteger(item3) || !Number.isInteger(item4)) {
+            //     return window.alert("One of the numbers you entered is not a number. Please reset your inputs and try again.")
+            // }
+            
+
+            // input is more than 0
+
+            console.log(item1, item2, item3, item4)
+       
+
 
         //     // give output box the value from given calculation
         //     document.forms["formB"].elements["result-final"].value = Math.round(finalAvg);
@@ -100,7 +112,7 @@
         //     } else {
         //         document.forms["formB"].elements["letter-grade"].value = 'N/A';
         //     }
-        // }
+        }
 
     </script>
 </head>
@@ -126,63 +138,63 @@
 
             <form name="formA">
                 <!-- Input boxes -->
-                Salesperson's Name: <input title="Please make sure that the salesperson's name is spelled correctly." class="black" type="text" name="hwAvgInt" size="10"><br><br>
+                Salesperson's Name: <input title="Please make sure that the salesperson's name is spelled correctly." class="black" type="text" name="salesNameInt" size="10"><br><br>
                 <h2>Input the number of items sold for each item number:</h2>
-                Item 1: <input class="black" type="text" name="midTermInt" size="10"><br><br>
-                Item 2: <input class="black" type="text" name="finalInt" size="10"><br><br>
-                Item 3: <input class="black" type="text" name="particInt" size="10"><br><br>
-                Item 4: <input class="black" type="text" name="particInt" size="10"><br><br>
+                Item 1: <input class="black" type="text" name="item1Int" size="10"><br><br>
+                Item 2: <input class="black" type="text" name="item2Int" size="10"><br><br>
+                Item 3: <input class="black" type="text" name="item3Int" size="10"><br><br>
+                Item 4: <input class="black" type="text" name="item4Int" size="10"><br><br>
                 <!-- Input buttons -->
                 <input class="black" type="button" onclick="process()" value="SUBMIT"><br><br>
                 <input class="black" type="reset" value="Reset Inputs"><br><br>
             </form>
-            <form name="formB">
+            <form name="formB"  style="padding-bottom: 150px;">
                 <table>
                     <tr>
                         <th>Item #</th>
                         <th>Price</th>
-                        <th>Number Sold</th>
-                        <th>Total</th>
+                        <th colspan="2">Number Sold</th>
+                        <th colspan="2">Total</th>
                     </tr>
                     <tr>
                         <td>1</td>
                         <td>$239.99</td>
-                        <td></td>
-                        <td></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td>$129.99</td>
-                        <td></td>
-                        <td></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
                     </tr>
                     <tr>
                         <td>3</td>
                         <td>$99.95</td>
-                        <td></td>
-                        <td></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
                     </tr>
                     <tr>
                         <td>4</td>
                         <td>$350.89</td>
-                        <td></td>
-                        <td></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
                     </tr>
                     <tr>
-                        <td>Total Amount Sold:</td>
-                        <td></td>
+                        <td colspan="3">Total Amount Sold:</td>
+                        <td colspan="2"></td>
                     </tr>
                     <tr>
-                        <td>Total Weekly Earnings:</td>
-                        <td></td>
+                        <td colspan="3">Total Weekly Earnings:</td>
+                        <td colspan="2"></td>
                     </tr>
                 </table>
-                <label for="result-final">Student's Final Average is: </label>
-                <textarea class="black" id="result-final" name="result-final" rows="1" cols="10"></textarea><br><br>
-                <div id="grade-msg"></div><br>
-                <label for="letter-grade">Student's Final Letter Grade:</label>
-                <textarea class="black" id="letter-grade" name="letter-grade" rows="1" cols="10"></textarea>
-                <br><br>
+                <!-- <label for="result-final">Student's Final Average is: </label> -->
+                <!-- <textarea class="black" id="result-final" name="result-final" rows="1" cols="10"></textarea><br><br> -->
+                <!-- <div id="grade-msg"></div><br> -->
+                <!-- <label for="letter-grade">Student's Final Letter Grade:</label> -->
+                <!-- <textarea class="black" id="letter-grade" name="letter-grade" rows="1" cols="10"></textarea> -->
+                <!-- <br><br> -->
             </form>
         </section>
     </div>
