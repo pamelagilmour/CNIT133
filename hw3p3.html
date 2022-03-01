@@ -25,7 +25,7 @@
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
     <style>
-        /* Part 2 scripts below: */
+        /* Part 3 scripts below: */
         /*  Styling here: */
         .body {
             width: 250px;
@@ -40,63 +40,37 @@
 
     <script>
 
-        // // // Javascript for Part2 below:
-        // function process() {
-        //     let i1, i2, i3, i4;
-        //     const i1Price = 239.99;
-        //     const i2Price = 129.75;
-        //     const i3Price = 99.95;
-        //     const i4Price = 350.89;
+        // Javascript for Part3 below:
+        function processToCel() {
+            let userInt = document.forms["formA"].elements["userInput"].value;
 
+            // check if input is an number
+            if (isNaN(userInt) || userInt === "") {
+                alert("The number you entered is not valid, try again.");
 
-        //     // variable hold values from input boxes
-        //     const salesName = document.forms["formA"].elements["salesNameInt"].value;
-        //     const item1 = document.forms["formA"].elements["item1Int"].value;
-        //     const item2 = document.forms["formA"].elements["item2Int"].value;
-        //     const item3 = document.forms["formA"].elements["item3Int"].value;
-        //     const item4 = document.forms["formA"].elements["item4Int"].value;
+            } else {
+                // calculation
+                const toCel = 5 / 9 * (userInt - 32);
+                document.forms["formA"].elements["result"].value = Math.trunc(toCel);
 
+            }
+        };
 
-        //     // input is an number and more than 0
-        //     if (isNaN(item1) || item1 < 0) {
-        //         alert('The number for Item 1 is NOT valid.');
-        //     }
+        function processToFah() {
+            let userInt = document.forms["formA"].elements["userInput"].value;
+            
+            // check if input is an number
+            if (isNaN(userInt) || userInt === "") {
+                alert("The number you entered is not valid, try again.");
 
-        //     if (isNaN(item2) || item2 < 0) {
-        //         alert('The number for Item 2 is NOT valid.')
-        //     }
+            } else {
+                // calculation
+                const toFah = (9 / 5 * userInt) + 32;
+                document.forms["formA"].elements["result"].value = Math.trunc(toFah);
 
-        //     if (isNaN(item3) || item3 < 0) {
-        //         alert('The number for Item 3 is NOT valid.')
-        //     }
+            }
 
-        //     if (isNaN(item4) || item4 < 0) {
-        //         alert('The number for Item 4 is NOT valid.')
-        //     }
-
-        //     // calculations:
-
-        //     i1Dollars = Number(parseFloat(item1 * i1Price));
-        //     i2Dollars = Number(parseFloat(item2 * i2Price));
-        //     i3Dollars = Number(parseFloat(item3 * i3Price));
-        //     i4Dollars = Number(parseFloat(item4 * i4Price));
-
-        //     totalDollars = i1Dollars + i2Dollars + i3Dollars + i4Dollars;
-
-        //     document.forms["formB"].elements["item1sold"].value = item1;
-        //     document.forms["formB"].elements["item2sold"].value = item2;
-        //     document.forms["formB"].elements["item3sold"].value = item3;
-        //     document.forms["formB"].elements["item4sold"].value = item4;
-
-        //     document.forms["formB"].elements["item1total"].value = '$' + parseFloat(item1 * i1Price).toFixed(2);
-        //     document.forms["formB"].elements["item2total"].value = '$' + parseFloat(item2 * i2Price).toFixed(2);
-        //     document.forms["formB"].elements["item3total"].value = '$' + parseFloat(item3 * i3Price).toFixed(2);
-        //     document.forms["formB"].elements["item4total"].value = '$' + parseFloat(item4 * i4Price).toFixed(2);
-
-        //     document.forms["formB"].elements["totalSold"].value = '$' + totalDollars.toFixed(2);
-        //     document.forms["formB"].elements["earnings"].value = '$' + Number(200.00 + (totalDollars * .09)).toFixed(2);
-
-        // }
+        };
 
     </script>
 </head>
@@ -107,13 +81,12 @@
     <div class="container">
         <nav class="nav row">
             <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link" href="hw2.html">Homework 2</a>
-            <a class="nav-link active" href="hw3.html">Homework 3</a>
+            <a class="nav-link active" href="hw3.html">Homework 3 Main</a>
+            <a class="nav-link" href="hw3p1.html">Homework 3 Part 1</a>
+            <a class="nav-link" href="hw3p2.html">Homework 3 Part 2</a>
+            <a class="nav-link" href="hw3p3.html">Homework 3 Part 3</a>
+            <a class="nav-link" href="hw3p4.html">Homework 3 Part 4</a>
             <a class="nav-link" href="hw4.html">Homework 4</a>
-            <a class="nav-link" href="hw5.html">Homework 5</a>
-            <a class="nav-link" href="hw6.html">Homework 6</a>
-            <a class="nav-link" href="hw7.html">Homework 7</a>
-            <a class="nav-link" href="hw8.html">Homework 8</a>
         </nav>
     </div>
     <div class="container">
@@ -122,62 +95,17 @@
 
             <form name="formA">
                 <!-- Input boxes -->
-                <!-- Salesperson's Name: <input title="Please make sure that the salesperson's name is spelled correctly."
-                    class="black" type="text" name="salesNameInt" size="10"><br><br>
-                <h2>Input the number of items sold for each item number:</h2>
-                Item 1: <input class="black" type="text" name="item1Int" size="10"><br><br>
-                Item 2: <input class="black" type="text" name="item2Int" size="10"><br><br>
-                Item 3: <input class="black" type="text" name="item3Int" size="10"><br><br>
-                Item 4: <input class="black" type="text" name="item4Int" size="10"><br><br>
-                Input buttons -->
-                <!-- <input class="black" type="button" onclick="process()" value="SUBMIT"><br><br>
+                <label for="userInput">Enter a number to be converted:</label>
+                <input class="black" type="text" name="userInput" size="10"><br><br>
+                <!-- Input buttons -->
+                <input class="black" type="button" onclick="processToCel()" value="Convert to Celsius">
+                <input class="black" type="button" onclick="processToFah()" value="Convert to Fahrenheit">
                 <input class="black" type="reset" value="Reset Inputs"><br><br>
+                <!-- Output box -->
+                Result: <input class="black" type="text" name="result" size="10" placeholder="degrees" readonly><br><br>
+                
             </form>
-            <form name="formB" style="padding-bottom: 150px;">
-                <table>
-                    <tr>
-                        <th class="hw3p2center">Item #</th>
-                        <th class="hw3p2center">Price</th>
-                        <th class="hw3p2center" colspan="2">Number Sold</th>
-                        <th class="hw3p2center" colspan="2">Total</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>$239.99</td>
-                        <td colspan="2"><input class="black hw3p2right" type="text" name="item1sold" size="10"></td>
-                        <td colspan="2"><input class="black hw3p2right" type="text" name="item1total" size="10"></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>$129.99</td>
-                        <td colspan="2"><input class="black hw3p2right" type="text" name="item2sold" size="10"></td>
-                        <td colspan="2"><input class="black hw3p2right" type="text" name="item2total" size="10"></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>$99.95</td>
-                        <td colspan="2"><input class="black hw3p2right" type="text" name="item3sold" size="10"></td>
-                        <td colspan="2"><input class="black hw3p2right" type="text" name="item3total" size="10"></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>$350.89</td>
-                        <td colspan="2"><input class="black hw3p2right" type="text" name="item4sold" size="10"></td>
-                        <td colspan="2"><input class="black hw3p2right" type="text" name="item4total" size="10"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="4">Total Amount Sold:</td>
-                        <td colspan="2"><input class="black hw3p2right" style="width: 100%;" type="text"
-                                name="totalSold" size="10"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="4">Total Weekly Earnings:</td>
-                        <td colspan="2"><input class="black hw3p2right" style="width: 100%;" type="text" name="earnings"
-                                size="10"></td>
-                    </tr>
-                </table>
-                <input class="black" type="reset" value="Reset Outputs"><br><br> -->
-            </form>
+
         </section>
     </div>
 </body>
