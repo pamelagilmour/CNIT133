@@ -31,73 +31,72 @@
             width: 250px;
             margin: 0px auto;
         }
+
         .ui-tooltip {
             opacity: 1;
             background: white;
-	    }
+        }
     </style>
 
     <script>
-        $( function() {
-            $( document ).tooltip();
-        })
-        // // Javascript for Part2 below:
-        function process() {
-            let i1, i2, i3, i4;
-            const i1Price = 239.99;
-            const i2Price = 129.75;
-            const i3Price = 99.95;
-            const i4Price = 350.89;
+
+        // // // Javascript for Part2 below:
+        // function process() {
+        //     let i1, i2, i3, i4;
+        //     const i1Price = 239.99;
+        //     const i2Price = 129.75;
+        //     const i3Price = 99.95;
+        //     const i4Price = 350.89;
 
 
-            // variable hold values from input boxes
-            const salesName = document.forms["formA"].elements["salesNameInt"].value;
-            const item1 = document.forms["formA"].elements["item1Int"].value;
-            const item2 = document.forms["formA"].elements["item2Int"].value;
-            const item3 = document.forms["formA"].elements["item3Int"].value;
-            const item4 = document.forms["formA"].elements["item4Int"].value;
+        //     // variable hold values from input boxes
+        //     const salesName = document.forms["formA"].elements["salesNameInt"].value;
+        //     const item1 = document.forms["formA"].elements["item1Int"].value;
+        //     const item2 = document.forms["formA"].elements["item2Int"].value;
+        //     const item3 = document.forms["formA"].elements["item3Int"].value;
+        //     const item4 = document.forms["formA"].elements["item4Int"].value;
 
 
-            // input is an number and more than 0
-            if (isNaN(item1) || item1 < 0) {
-                alert('The number for Item 1 is NOT valid.');
-            }
+        //     // input is an number and more than 0
+        //     if (isNaN(item1) || item1 < 0) {
+        //         alert('The number for Item 1 is NOT valid.');
+        //     }
 
-            if (isNaN(item2) || item2 < 0) {
-                alert('The number for Item 2 is NOT valid.')
-            }
+        //     if (isNaN(item2) || item2 < 0) {
+        //         alert('The number for Item 2 is NOT valid.')
+        //     }
 
-            if (isNaN(item3) || item3 < 0) {
-                alert('The number for Item 3 is NOT valid.')
-            }
+        //     if (isNaN(item3) || item3 < 0) {
+        //         alert('The number for Item 3 is NOT valid.')
+        //     }
 
-            if (isNaN(item4) || item4 < 0) {
-                alert('The number for Item 4 is NOT valid.')
-            }
+        //     if (isNaN(item4) || item4 < 0) {
+        //         alert('The number for Item 4 is NOT valid.')
+        //     }
 
-            // calculations:
+        //     // calculations:
 
-            i1Dollars = Number(parseFloat(item1 * i1Price));
-            i2Dollars = Number(parseFloat(item2 * i2Price));
-            i3Dollars = Number(parseFloat(item3 * i3Price));
-            i4Dollars = Number(parseFloat(item4 * i4Price));
-            
-            totalDollars = i1Dollars + i2Dollars + i3Dollars + i4Dollars;
+        //     i1Dollars = Number(parseFloat(item1 * i1Price));
+        //     i2Dollars = Number(parseFloat(item2 * i2Price));
+        //     i3Dollars = Number(parseFloat(item3 * i3Price));
+        //     i4Dollars = Number(parseFloat(item4 * i4Price));
 
-            document.forms["formB"].elements["item1sold"].value = item1;
-            document.forms["formB"].elements["item2sold"].value = item2;
-            document.forms["formB"].elements["item3sold"].value = item3;
-            document.forms["formB"].elements["item4sold"].value = item4;
+        //     totalDollars = i1Dollars + i2Dollars + i3Dollars + i4Dollars;
 
-            document.forms["formB"].elements["item1total"].value = '$' + parseFloat(item1 * i1Price).toFixed(2);
-            document.forms["formB"].elements["item2total"].value = '$' + parseFloat(item2 * i2Price).toFixed(2);
-            document.forms["formB"].elements["item3total"].value = '$' + parseFloat(item3 * i3Price).toFixed(2);
-            document.forms["formB"].elements["item4total"].value = '$' + parseFloat(item4 * i4Price).toFixed(2);
+        //     document.forms["formB"].elements["item1sold"].value = item1;
+        //     document.forms["formB"].elements["item2sold"].value = item2;
+        //     document.forms["formB"].elements["item3sold"].value = item3;
+        //     document.forms["formB"].elements["item4sold"].value = item4;
 
-            document.forms["formB"].elements["totalSold"].value = '$' + totalDollars.toFixed(2);
-            document.forms["formB"].elements["earnings"].value = '$' + Number(200.00 + (totalDollars * .09)).toFixed(2);
+        //     document.forms["formB"].elements["item1total"].value = '$' + parseFloat(item1 * i1Price).toFixed(2);
+        //     document.forms["formB"].elements["item2total"].value = '$' + parseFloat(item2 * i2Price).toFixed(2);
+        //     document.forms["formB"].elements["item3total"].value = '$' + parseFloat(item3 * i3Price).toFixed(2);
+        //     document.forms["formB"].elements["item4total"].value = '$' + parseFloat(item4 * i4Price).toFixed(2);
 
-        }
+        //     document.forms["formB"].elements["totalSold"].value = '$' + totalDollars.toFixed(2);
+        //     document.forms["formB"].elements["earnings"].value = '$' + Number(200.00 + (totalDollars * .09)).toFixed(2);
+
+        // }
 
     </script>
 </head>
@@ -119,21 +118,22 @@
     </div>
     <div class="container">
         <section class="col">
-            <h1 class="row">Homework Page 3 - Part 2</h1>
+            <h1 class="row">Homework Page 3 - Part 3</h1>
 
             <form name="formA">
                 <!-- Input boxes -->
-                Salesperson's Name: <input title="Please make sure that the salesperson's name is spelled correctly." class="black" type="text" name="salesNameInt" size="10"><br><br>
+                <!-- Salesperson's Name: <input title="Please make sure that the salesperson's name is spelled correctly."
+                    class="black" type="text" name="salesNameInt" size="10"><br><br>
                 <h2>Input the number of items sold for each item number:</h2>
                 Item 1: <input class="black" type="text" name="item1Int" size="10"><br><br>
                 Item 2: <input class="black" type="text" name="item2Int" size="10"><br><br>
                 Item 3: <input class="black" type="text" name="item3Int" size="10"><br><br>
                 Item 4: <input class="black" type="text" name="item4Int" size="10"><br><br>
-                <!-- Input buttons -->
-                <input class="black" type="button" onclick="process()" value="SUBMIT"><br><br>
+                Input buttons -->
+                <!-- <input class="black" type="button" onclick="process()" value="SUBMIT"><br><br>
                 <input class="black" type="reset" value="Reset Inputs"><br><br>
             </form>
-            <form name="formB"  style="padding-bottom: 150px;">
+            <form name="formB" style="padding-bottom: 150px;">
                 <table>
                     <tr>
                         <th class="hw3p2center">Item #</th>
@@ -167,14 +167,16 @@
                     </tr>
                     <tr>
                         <td colspan="4">Total Amount Sold:</td>
-                        <td colspan="2"><input class="black hw3p2right" style="width: 100%;" type="text" name="totalSold" size="10"></td>
+                        <td colspan="2"><input class="black hw3p2right" style="width: 100%;" type="text"
+                                name="totalSold" size="10"></td>
                     </tr>
                     <tr>
                         <td colspan="4">Total Weekly Earnings:</td>
-                        <td colspan="2"><input class="black hw3p2right" style="width: 100%;" type="text" name="earnings" size="10"></td>
+                        <td colspan="2"><input class="black hw3p2right" style="width: 100%;" type="text" name="earnings"
+                                size="10"></td>
                     </tr>
                 </table>
-                <input class="black" type="reset" value="Reset Outputs"><br><br>
+                <input class="black" type="reset" value="Reset Outputs"><br><br> -->
             </form>
         </section>
     </div>
