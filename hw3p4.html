@@ -31,51 +31,58 @@
             width: 250px;
             margin: 0px auto;
         }
-
-        /* .ui-tooltip {
-            opacity: 1;
-            background: white;
-        } */
     </style>
 
     <script>
 
-        // Javascript for Part3 below:
-        // function processToCel() {
-        //     let userInt = document.forms["formA"].elements["userInput"].value;
+        // Javascript for Part4 below:
+        function myPrompt() {
+            // Use Math.random to produce two one - digit integers(0 - 9)
+            const int1 = Math.trunc(Math.random() * 10);
+            const int2 = Math.trunc(Math.random() * 10);
 
-        //     // check if input is an number
-        //     if (isNaN(userInt) || userInt === "") {
-        //         alert("The number you entered is not valid, try again.");
 
-        //     } else {
-        //         // calculation
-        //         const toCel = 5 / 9 * (userInt - 32);
-        //         document.forms["formA"].elements["result"].value = Math.trunc(toCel);
+            // Display a question such as: How much is 6 times 7 ?
+            document.getElementById("question").innerHTML = `<h2 id="itsHere" style="padding-bottom: 20px">How much is <span id="int1">${int1}</span> times <span id="int2">${int2}</span>?</h2>`;
+            
 
-        //     }
-        // };
+        }
 
-        // function processToFah() {
-        //     let userInt = document.forms["formA"].elements["userInput"].value;
+        function getUsrInput() {
 
-        //     // check if input is an number
-        //     if (isNaN(userInt) || userInt === "") {
-        //         alert("The number you entered is not valid, try again.");
+            const userInt = document.forms["formA"].elements["userInput"].value;
+            const convertInt = Number(userInt);
+            const int1 = document.getElementById("int1").innerHTML;
+            const int2 = document.getElementById("int2").innerHTML;
 
-        //     } else {
-        //         // calculation
-        //         const toFah = (9 / 5 * userInt) + 32;
-        //         document.forms["formA"].elements["result"].value = Math.trunc(toFah);
+            const answer = int1 * int2;
+            console.log(userInt, int1, int2, answer);
 
-        //     }
 
-        // };
+            // check if input is an number
+            if (isNaN(userInt) || userInt === "") {
+                alert("The number you entered is not valid, try again.");
+            }
+
+            // check if values are equal  
+            if (convertInt === answer) {
+                console.log(convertInt, typeof convertInt, answer, typeof answer);
+                document.getElementById("msg").innerHTML = `<h3>Very good!</h3><br>`;
+
+            } else {
+                console.log(convertInt, typeof convertInt, answer, typeof answer);
+                document.getElementById("msg").innerHTML = `<h3>Incorrect, please try again.</h3><br>`;
+
+            }
+
+            document.forms["formA"].elements["result"].value = answer;
+
+        }
 
     </script>
 </head>
 
-<body>
+<body onload="myPrompt()">
     <!-- insert comments into every homework assignment  -->
     <header class="header">CNIT 133 Homework 3 - Functions</header>
     <div class="container">
@@ -94,16 +101,23 @@
             <h1 class="row">Homework Page 3 - Part 4</h1>
 
             <form name="formA">
+                <!-- Prompt -->
+                <!-- <input class="black" style="margin: 20px;" type="button" onclick="myPrompt()" value="Click to Begin Multiplication Practice"> -->
+                <div id="question"></div>
 
                 <!-- Input boxes -->
-                <!-- <label for="userInput">Enter a number to be converted:</label> -->
-                <!-- <input class="black" type="text" name="userInput" size="10"><br><br> -->
+                <label for="userInput">Enter your answer: </label>
+                <input class="black" type="text" name="userInput" size="10"><br><br>
+
                 <!-- Input buttons -->
-                <!-- <input class="black" type="button" onclick="processToCel()" value="Convert to Celsius"> -->
-                <!-- <input class="black" type="button" onclick="processToFah()" value="Convert to Fahrenheit"> -->
-                <!-- <input class="black" type="reset" value="Reset Inputs"><br><br> -->
+                <input class="black"  style="margin: 20px;" type="button" onclick="getUsrInput()" value="Submit Your Answer">
+                <input class="black" type="reset" value="Reset Your Answer"><br><br>
+
                 <!-- Output box -->
-                <!-- Result: <input class="black" type="text" name="result" size="10" placeholder="degrees" readonly><br><br> -->
+                <label for="result">The answer:</label>
+                <input class="black" id="check" type="text" name="result" size="10" readonly><br><br>
+                <div id="msg"></div>
+                <div id="continue"></div>
 
             </form>
 
