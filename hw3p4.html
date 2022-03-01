@@ -65,11 +65,9 @@
 
             // check if values are equal  
             if (convertInt === answer) {
-                console.log(convertInt, typeof convertInt, answer, typeof answer);
                 document.getElementById("msg").innerHTML = `<h3>Very good!</h3><br>`;
 
             } else if (convertInt !== answer) {
-                console.log('incorrect', convertInt, typeof convertInt, answer, typeof answer);
                 document.getElementById("msg").innerHTML = `<h3>Incorrect, please try again.</h3><br>`;
 
             }
@@ -83,9 +81,11 @@
                 if (confirm(text) == true) {
 
                     myPrompt();
+                    document.getElementById("history").innerHTML += `<p>${int1} x ${int2} = ${answer}</p><br>`;
                     document.forms["formA"].elements["userInput"].value = "";
                     document.forms["formA"].elements["result"].value = "";
                     document.getElementById("msg").innerHTML = `<h3></h3><br>`;
+
 
                 }
 
@@ -118,6 +118,7 @@
 
             <form name="formA">
                 <!-- Prompt -->
+                <div id="history"></div>
                 <div id="question"></div>
 
                 <!-- Input boxes -->
