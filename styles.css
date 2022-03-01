@@ -100,7 +100,16 @@ td {
 
 .black {
     color: black;
-        }
+}
+
+.hw3p2center {
+    text-align: center;
+}
+
+.hw3p2right {
+    text-align: right;
+
+}
 /* 
 font-family: 'Inter', sans-serif;
 font-family: 'Roboto Mono', monospace;
@@ -115,6 +124,7 @@ font-family: 'Roboto Mono', monospace;
     }
 
 }
+
 
 /* @media screen and (max-width: 768px) {
     

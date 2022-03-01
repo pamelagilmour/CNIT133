@@ -44,6 +44,10 @@
         // // Javascript for Part2 below:
         function process() {
             let i1, i2, i3, i4;
+            const i1Price = 239.99;
+            const i2Price = 129.75;
+            const i3Price = 99.95;
+            const i4Price = 350.89;
 
 
             // variable hold values from input boxes
@@ -54,6 +58,7 @@
             const item4 = document.forms["formA"].elements["item4Int"].value;
 
 
+            // input is an number and more than 0
             if (isNaN(item1) || item1 < 0) {
                 alert('The number for Item 1 is NOT valid.');
             }
@@ -70,48 +75,28 @@
                 alert('The number for Item 4 is NOT valid.')
             }
 
-            i1 = parseFloat(item1).toFixed(2);
-            console.log(i1);
-            i2 = parseFloat(item2).toFixed(2);
-            console.log(i2);
-            i3 = parseFloat(item3).toFixed(2);
-            console.log(i3);
-            i4 = parseFloat(item4).toFixed(2);
-            console.log(i4);
+            // calculations:
 
-
-
-
-            // input are integers
-            // if (!Number.isInteger(item1) || !Number.isInteger(item2) || !Number.isInteger(item3) || !Number.isInteger(item4)) {
-            //     return window.alert("One of the numbers you entered is not a number. Please reset your inputs and try again.")
-            // }
+            i1Dollars = Number(parseFloat(item1 * i1Price));
+            i2Dollars = Number(parseFloat(item2 * i2Price));
+            i3Dollars = Number(parseFloat(item3 * i3Price));
+            i4Dollars = Number(parseFloat(item4 * i4Price));
             
+            totalDollars = i1Dollars + i2Dollars + i3Dollars + i4Dollars;
 
-            // input is more than 0
+            document.forms["formB"].elements["item1sold"].value = item1;
+            document.forms["formB"].elements["item2sold"].value = item2;
+            document.forms["formB"].elements["item3sold"].value = item3;
+            document.forms["formB"].elements["item4sold"].value = item4;
 
-            console.log(item1, item2, item3, item4)
-       
+            document.forms["formB"].elements["item1total"].value = '$' + parseFloat(item1 * i1Price).toFixed(2);
+            document.forms["formB"].elements["item2total"].value = '$' + parseFloat(item2 * i2Price).toFixed(2);
+            document.forms["formB"].elements["item3total"].value = '$' + parseFloat(item3 * i3Price).toFixed(2);
+            document.forms["formB"].elements["item4total"].value = '$' + parseFloat(item4 * i4Price).toFixed(2);
 
+            document.forms["formB"].elements["totalSold"].value = '$' + totalDollars.toFixed(2);
+            document.forms["formB"].elements["earnings"].value = '$' + Number(200.00 + (totalDollars * .09)).toFixed(2);
 
-        //     // give output box the value from given calculation
-        //     document.forms["formB"].elements["result-final"].value = Math.round(finalAvg);
-
-        //     if (finalAvg > 89 && finalAvg < 101) {
-        //         document.forms["formB"].elements["letter-grade"].value = 'A';
-        //     } else if (finalAvg > 79 && finalAvg < 90) {
-        //         document.forms["formB"].elements["letter-grade"].value = 'B';
-        //     } else if (finalAvg > 69 && finalAvg < 80) {
-        //         document.forms["formB"].elements["letter-grade"].value = 'C';
-        //     } else if (finalAvg > 59 && finalAvg < 70) {
-        //         document.forms["formB"].elements["letter-grade"].value = 'D';
-        //         document.getElementById('grade-msg').innerHTML = '<span>Student must retake the course.</span>'
-
-        //     } else if (finalAvg > -1 && finalAvg < 60) {
-        //         document.forms["formB"].elements["letter-grade"].value = 'F';
-        //     } else {
-        //         document.forms["formB"].elements["letter-grade"].value = 'N/A';
-        //     }
         }
 
     </script>
@@ -151,50 +136,44 @@
             <form name="formB"  style="padding-bottom: 150px;">
                 <table>
                     <tr>
-                        <th>Item #</th>
-                        <th>Price</th>
-                        <th colspan="2">Number Sold</th>
-                        <th colspan="2">Total</th>
+                        <th class="hw3p2center">Item #</th>
+                        <th class="hw3p2center">Price</th>
+                        <th class="hw3p2center" colspan="2">Number Sold</th>
+                        <th class="hw3p2center" colspan="2">Total</th>
                     </tr>
                     <tr>
                         <td>1</td>
                         <td>$239.99</td>
-                        <td colspan="2"></td>
-                        <td colspan="2"></td>
+                        <td colspan="2"><input class="black hw3p2right" type="text" name="item1sold" size="10"></td>
+                        <td colspan="2"><input class="black hw3p2right" type="text" name="item1total" size="10"></td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td>$129.99</td>
-                        <td colspan="2"></td>
-                        <td colspan="2"></td>
+                        <td colspan="2"><input class="black hw3p2right" type="text" name="item2sold" size="10"></td>
+                        <td colspan="2"><input class="black hw3p2right" type="text" name="item2total" size="10"></td>
                     </tr>
                     <tr>
                         <td>3</td>
                         <td>$99.95</td>
-                        <td colspan="2"></td>
-                        <td colspan="2"></td>
+                        <td colspan="2"><input class="black hw3p2right" type="text" name="item3sold" size="10"></td>
+                        <td colspan="2"><input class="black hw3p2right" type="text" name="item3total" size="10"></td>
                     </tr>
                     <tr>
                         <td>4</td>
                         <td>$350.89</td>
-                        <td colspan="2"></td>
-                        <td colspan="2"></td>
+                        <td colspan="2"><input class="black hw3p2right" type="text" name="item4sold" size="10"></td>
+                        <td colspan="2"><input class="black hw3p2right" type="text" name="item4total" size="10"></td>
                     </tr>
                     <tr>
-                        <td colspan="3">Total Amount Sold:</td>
-                        <td colspan="2"></td>
+                        <td colspan="4">Total Amount Sold:</td>
+                        <td colspan="2"><input class="black hw3p2right" style="width: 100%;" type="text" name="totalSold" size="10"></td>
                     </tr>
                     <tr>
-                        <td colspan="3">Total Weekly Earnings:</td>
-                        <td colspan="2"></td>
+                        <td colspan="4">Total Weekly Earnings:</td>
+                        <td colspan="2"><input class="black hw3p2right" style="width: 100%;" type="text" name="earnings" size="10"></td>
                     </tr>
                 </table>
-                <!-- <label for="result-final">Student's Final Average is: </label> -->
-                <!-- <textarea class="black" id="result-final" name="result-final" rows="1" cols="10"></textarea><br><br> -->
-                <!-- <div id="grade-msg"></div><br> -->
-                <!-- <label for="letter-grade">Student's Final Letter Grade:</label> -->
-                <!-- <textarea class="black" id="letter-grade" name="letter-grade" rows="1" cols="10"></textarea> -->
-                <!-- <br><br> -->
             </form>
         </section>
     </div>
