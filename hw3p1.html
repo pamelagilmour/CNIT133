@@ -83,6 +83,7 @@
 
             } else if (finalAvg > -1 && finalAvg < 60) {
                 document.forms["formB"].elements["letter-grade"].value = 'F';
+                document.getElementById('grade-msg').innerHTML = '<span>Student must retake the course.</span>'
             } else {
                 document.forms["formB"].elements["letter-grade"].value = 'N/A';
             }

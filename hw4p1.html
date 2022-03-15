@@ -23,13 +23,10 @@
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
     <script>
-        // using a for statement,
-        // calculate the product and sum of every fourth integer from 5 to 21 inclusive and 
-        // then displays the results, along with some accompanying text.
 
-        // (Note: You should print a line that contains the result of 5 * 9 * 13 * 17 * 21 and a second line that contains the result of 5 + 9 + 13 + 17 + 21). 
-        for ( )
+        // console.log(document.getElementById("insert-prod").innerHTML);
 
+        // document.getElementById("insert-prod").innerHTML += output;
 
     </script>
 </head>
@@ -51,22 +48,76 @@
     <div class="container">
         <section class="col">
             <h1 class="row">Homework Page 4</h1>
-            <ul>
-                <li><a href="hw4p1.html">Part 1</a></li>
-                <li><a href="hw4p2.html">Part 2</a></li>
-                <li><a href="hw4pec.html">Extra Credit</a></li>
-            </ul>
         </section>
         <section>
-            <p>"The product of every fourth integer from 5 to 21 inclusive: "</p>
-            <!-- and then display the result -->
-            <p>"The sum of every fourth integer from 5 to 21 inclusive: "</p>
-            <!-- and then display the result -->
+            <script>
+                // Homework 4 Part 1 starts here:
+
+                let product = 1;
+                let sum = 0;
+
+                let numList = [];
+                for (let iterator = 5; iterator < 22; iterator+=4) {
+                    numList.push(iterator);
+                }
+
+                document.write("<p>My number array: [ ", numList, " ]</p>");
+
+                // using a for statement,
+                // calculate the product and sum of every fourth integer from 5 to 21 inclusive and
+                // then displays the results, along with some accompanying text.
+                for ( let i = 0; i < numList.length; i++ ) {
+
+                    product *= numList[i];
+                    sum += numList[i];
+                }
+
+
+                // and then display the result
+
+                document.write("<p>The product of every fourth integer from 5 to 21 inclusive: ", product, "</p>");
+
+                document.write("<p>The sum of every fourth integer from 5 to 21 inclusive: ", sum, "</p>");
+
+            </script>
+            <script>
+                // Homework 4 Part 2 starts here:
+                // using a while or do while statement, 
+                // calculate the product and sum of every third integer from 3 to 21 inclusive 
+                
+                // then display the results, along with some accompanying text.
+
+                let product = 1;
+                    let sum = 0;
+
+                    let numList = [];
+                    for (let iterator = 5; iterator < 22; iterator += 4) {
+                        numList.push(iterator);
+                    }
+
+                    document.write("<p>My number array: [ ", numList, " ]</p>");
+
+                    // using a for statement,
+                    // calculate the product and sum of every fourth integer from 5 to 21 inclusive and
+                    // then displays the results, along with some accompanying text.
+                    for (let i = 0; i < numList.length; i++) {
+
+                        product *= numList[i];
+                        sum += numList[i];
+                    }
+
+
+                    // and then display the result
+
+                    document.write("<p>The product of every fourth integer from 5 to 21 inclusive: ", product, "</p>");
+
+                    document.write("<p>The sum of every fourth integer from 5 to 21 inclusive: ", sum, "</p>");
+
+
+
+            </script>
         </section>
     </div>
-
-    <footer></footer>
-
 </body>
 
 </html>
