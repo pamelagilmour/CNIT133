@@ -110,7 +110,47 @@ td {
     text-align: right;
 
 }
-/* 
+
+#draggable {
+    position: relative;
+    width: 70px;
+    height: 90px;
+    margin-top: 10px;
+
+}
+
+#draggable::before, #draggable::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background: red;
+
+}
+
+#draggable::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+
+}
+
+#draggable::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+
+}
+
+#heart-text {
+    position: absolute;
+    z-index: 7;
+    padding-left: 15px;
+    padding-top: 5px;
+}
+/*
 font-family: 'Inter', sans-serif;
 font-family: 'Roboto Mono', monospace;
 */

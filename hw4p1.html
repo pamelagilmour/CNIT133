@@ -22,13 +22,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <script>
-
-        // console.log(document.getElementById("insert-prod").innerHTML);
-
-        // document.getElementById("insert-prod").innerHTML += output;
-
+        $(function () {
+            $("#draggable").draggable();
+        });
     </script>
+
 </head>
 
 <body>
@@ -48,81 +49,93 @@
     <div class="container">
         <section class="col">
             <h1 class="row">Homework Page 4</h1>
+            <div class="row">
+                <div id="draggable" class="ui-widget-content">
+                    <p id="heart-text" >draggable element</p>
+                </div>
+                <section class="col">
+                
+                    <script>
+                        // Homework 4 Part 1 starts here:
+                        document.write("<h2>Part 1a</h2>");
+
+                        let fiveProduct = 1;
+                        let fiveSum = 0;
+
+                        // programmatically create a list of numbers 5 through 21
+                        let numList = [];
+
+                        for (let iterator = 5; iterator < 22; iterator += 4) {
+                            numList.push(iterator);
+                        }
+
+                        // display the list 
+                        document.write("<p>My number array: [ ", numList, " ]</p>");
+
+                        // using a for statement,
+                        // calculate the product and sum of every fourth integer from 5 to 21 inclusive and
+                        // then displays the results, along with some accompanying text.
+                        for (let i = 0; i < numList.length; i++) {
+
+                            fiveProduct *= numList[i];
+                            fiveSum += numList[i];
+                        }
+
+
+                        // and then display the result
+
+                        document.write("<p>The product of every fourth integer from 5 to 21 inclusive: ", fiveProduct, "</p>");
+
+                        document.write("<p>The sum of every fourth integer from 5 to 21 inclusive: ", fiveSum, "</p><br>");
+
+                    </script>
+                    <script>
+                        // Homework 4 Part 2 starts here:
+                        document.write("<h2>Part 1b</h2>");
+                        let threeProd = 1;
+                        let thirdSum = 0;
+
+                        // programmatically create a list of numbers 3 through 21
+                        let threeList = [];
+                        for (let iterator = 3; iterator < 22; iterator += 3) {
+                            threeList.push(iterator);
+                        }
+
+                        // display the list
+                        document.write("<p>My number array: [ ", threeList, " ]</p>");
+
+                        // using a while or do while statement, 
+                        // calculate the product and sum of every third integer from 3 to 21 inclusive 
+                        let whileIter = 0;
+                        while (whileIter < threeList.length) {
+
+                            // console.log(threeList[whileIter], "x", threeProd, "=", threeList[whileIter] * threeProd);
+
+                            threeProd *= threeList[whileIter];
+                            thirdSum += threeList[whileIter];
+
+                            whileIter += 1;
+
+                        }
+
+                        // and then display the result
+
+                        document.write("<p>The product of every third integer from 3 to 21 inclusive: ", threeProd, "</p>");
+
+                        document.write("<p>The sum of every third integer from 3 to 21 inclusive: ", thirdSum, "</p>");
+
+
+
+                    </script>
+                </section>
+
+            </div>
+
+            
+
         </section>
-        <section>
-            <script>
-                // Homework 4 Part 1 starts here:
-                document.write("<h2>Part 1a</h2>");
 
-                let fiveProduct = 1;
-                let fiveSum = 0;
-
-                // programmatically create a list of numbers 5 through 21
-                let numList = [];
-
-                for (let iterator = 5; iterator < 22; iterator+=4) {
-                    numList.push(iterator);
-                }
-
-                // display the list 
-                document.write("<p>My number array: [ ", numList, " ]</p>");
-
-                // using a for statement,
-                // calculate the product and sum of every fourth integer from 5 to 21 inclusive and
-                // then displays the results, along with some accompanying text.
-                for ( let i = 0; i < numList.length; i++ ) {
-
-                    fiveProduct *= numList[i];
-                    fiveSum += numList[i];
-                }
-
-
-                // and then display the result
-
-                document.write("<p>The product of every fourth integer from 5 to 21 inclusive: ", fiveProduct, "</p>");
-
-                document.write("<p>The sum of every fourth integer from 5 to 21 inclusive: ", fiveSum, "</p><br>");
-
-            </script>
-            <script>
-                // Homework 4 Part 2 starts here:
-                document.write("<h2>Part 1b</h2>");
-                let threeProd = 1;
-                let thirdSum = 0;
-
-                // programmatically create a list of numbers 3 through 21
-                let threeList = [];
-                for (let iterator = 3; iterator < 22; iterator += 3) {
-                    threeList.push(iterator);
-                }
-
-                // display the list
-                document.write("<p>My number array: [ ", threeList, " ]</p>");
-
-                // using a while or do while statement, 
-                // calculate the product and sum of every third integer from 3 to 21 inclusive 
-                let whileIter = 0;
-                while ( whileIter < threeList.length ) {
-
-                    // console.log(threeList[whileIter], "x", threeProd, "=", threeList[whileIter] * threeProd);
-
-                    threeProd *= threeList[whileIter];
-                    thirdSum += threeList[whileIter];
-
-                    whileIter += 1;
-
-                }
-
-                // and then display the result
-
-                document.write("<p>The product of every third integer from 3 to 21 inclusive: ", threeProd, "</p>");
-
-                document.write("<p>The sum of every third integer from 3 to 21 inclusive: ", thirdSum, "</p>");
-
-
-
-            </script>
-        </section>
+        
     </div>
 </body>
 
