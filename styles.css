@@ -155,6 +155,15 @@ td {
 #hw4p2 {
     width: 35%;
 }
+
+tr:nth-child(even) {
+    background: yellow;
+}
+
+tr:nth-child(odd) {
+    background: orange;
+} 
+
 /*
 font-family: 'Inter', sans-serif;
 font-family: 'Roboto Mono', monospace;
