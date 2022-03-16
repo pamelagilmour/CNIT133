@@ -52,14 +52,24 @@
                             <th class="hw3p2center" style="width: 35%">Interest Rate</th>
                         </tr>
                         <tr>
-                            <td>
                                 <script>
+                                    // generate a list of numbers
                                     let yrNums = [];
-                                    for (let iterator = 0; iterator < 11; iterator++) {
+                                    for (let iterator = 1; iterator < 11; iterator++) {
                                         yrNums.push(iterator);
                                     }
+
+                                    // math for "Amount on deposit" cell
+
+
+                                    // write table cells to the page
+                                    for (let iterator = 0; iterator < yrNums.length; iterator++) {
+                                        document.write("<td>", yrNums[iterator], "</td>");
+                                        document.write("<td>", , "</td>");
+                                        document.write("<td>0.05</td>");
+
+                                    }
                                 </script>
-                            </td>
                         </tr>
                     </tbody>
                 </table>
