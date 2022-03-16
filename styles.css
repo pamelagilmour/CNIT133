@@ -104,6 +104,7 @@ td {
 
 .hw3p2center {
     text-align: center;
+
 }
 
 .hw3p2right {
@@ -149,6 +150,10 @@ td {
     z-index: 7;
     padding-left: 15px;
     padding-top: 5px;
+}
+
+#hw4p2 {
+    width: 45%;
 }
 /*
 font-family: 'Inter', sans-serif;
