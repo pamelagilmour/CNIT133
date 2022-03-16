@@ -23,6 +23,7 @@
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
 
+
 </head>
 
 <body>
@@ -46,59 +47,80 @@
             <div class="row set-side-margins" style="padding-bottom: 10%;">
                 <table id="hw4p2">
                     <tbody>
-                        <tr>
-                            <th class="hw3p2center" style="width: 20%">Year</th>
-                            <th class="hw3p2center" style="width: 45%">Amount on deposit</th>
-                            <th class="hw3p2center" style="width: 35%">Interest Rate</th>
-                        </tr>
-                        <tr>
-                                <script>
-                                    // generate a list of numbers
-                                    let yrNums = [];
-                                    for (let iterator = 1; iterator < 11; iterator++) {
-                                        yrNums.push(iterator);
-                                    }
+                        <script>
+                            // generate a list of numbers
+                            let yrNums = [];
+                            for (let iterator = 1; iterator < 11; iterator++) {
+                                yrNums.push(iterator);
+                            }
 
-                                    // math for "Amount on deposit" cell
+                            // there are 3 interest rates
+                            let rate5 = .05;
+                            let rate6 = .06;
+                            let rate7 = .07;
+
+                            // math for "Amount on deposit" cell
+                            let principle = 1000;
+                            let vals5 = [];
+                            let vals6 = [];
+                            let vals7 = [];
 
 
-                                    // write table cells to the page
-                                    for (let iterator = 0; iterator < yrNums.length; iterator++) {
-                                        document.write("<td>", yrNums[iterator], "</td>");
-                                        document.write("<td>", , "</td>");
-                                        document.write("<td>0.05</td>");
 
-                                    }
-                                </script>
-                        </tr>
+                            for (let i = 0; i < yrNums.length; i++ ) {
+
+                                let val4cell5 = principle * (1 + rate5) ** yrNums[i];
+                                vals5.push(val4cell5);
+                                let val4cell6 = principle * (1 + rate6) ** yrNums[i];
+                                vals6.push(val4cell6);
+                                let val4cell7 = principle * (1 + rate7) ** yrNums[i];
+                                vals7.push(val4cell7);
+
+                            }
+
+                            for (let i = 0; i < 3; i++ ) {
+                                document.write("<table id='hw4p2'>");
+                                document.write("<tbody>");
+                                document.write("<tr>");
+                                document.write("<th class='hw3p2center' style='width: 20%'>Year</th>");
+                                document.write("<th class='hw3p2center' style='width: 45%'>Amount on deposit</th>");
+                                document.write("<th class='hw3p2center' style='width: 35%'>Interest Rate</th>");
+                                document.write("</tr>");
+
+                                for (let iterator = 0; iterator < yrNums.length; iterator++) {
+                                    document.write("<tr>");
+                                    document.write("<td>", yrNums[iterator], "</td>");
+                                    document.write("<td>$", vals5[iterator].toFixed(2), "</td>");
+                                    document.write("<td>0.05</td>");
+                                    document.write("</tr>");
+
+                                }
+
+                                document.write("</tbody>");
+                                document.write("</table>");
+                    
+                            }
+
+                            // 5% Table goes here
+                            // write table cells to the page
+                            // for (let iterator = 0; iterator < yrNums.length; iterator++) {
+                            //     document.write("<tr>");
+                            //     document.write("<td>", yrNums[iterator], "</td>");
+                            //     document.write("<td>$", vals5[iterator].toFixed(2), "</td>");
+                            //     document.write("<td>0.05</td>");
+                            //     document.write("</tr>");
+
+                            // }
+                            // 6% Table goes here
+
+                        
+                            // 7% table goes here
+                        </script>
                     </tbody>
                 </table>
-                <script>
-
-                // let principle = 1000;
                 
-                // // there are 3 interest rates
-                // let rate5 = .05;
-                // let rate6 = .06;
-                // let rate7 = .07;
-
-                // let numYears = 1;
-
-                // let amount = principle * (1+rate5) * numYears;
-
-                // 5% Table goes here
-
-                // 6% Table goes here
-
-                // 7% table goes here
-
-
-
-                </script>
             </div>
         </section>
-
-
     </div>
 </body>
 
