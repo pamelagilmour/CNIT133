@@ -156,14 +156,11 @@ td {
     width: 35%;
 }
 
-tr:nth-child(even) {
-    background: yellow;
+
+
+footer {
+    padding-top: 50px;
 }
-
-tr:nth-child(odd) {
-    background: orange;
-} 
-
 /*
 font-family: 'Inter', sans-serif;
 font-family: 'Roboto Mono', monospace;
