@@ -29,12 +29,28 @@
 
 
             if (sqValVar >= 2 && sqValVar <= 10) {
-                
-                // let something;
 
-                for (let i = 0; i < sqValVar+1; i++) {
-                    let sqSideVal = parseInt(sqValVar);
-                    document.getElementById('putSqHere').innerHTML += '*';
+                // for each iteration, we want to print a row of characters 
+                for (let i = 0; i < sqValVar; i++) {
+
+                    const ourPixel = ' * ';
+
+                    let rowIter = parseInt(sqValVar);
+
+                    let firstNlastRow = ourPixel.repeat(rowIter);
+
+
+                    document.getElementById('putSqHere').innerHTML = `${firstNlastRow}<br>`
+
+                    for (let i = 0; i < rowIter - 2; i++ ){
+                        document.getElementById('putSqHere').innerHTML += `${firstNlastRow}<br>`
+
+                    }
+
+                    document.getElementById('putSqHere').innerHTML += `${firstNlastRow}<br>`
+
+
+
 
 
                 }
