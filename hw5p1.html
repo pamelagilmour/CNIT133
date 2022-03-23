@@ -24,6 +24,23 @@
     <link rel="icon" type="image/x-icon" href="fav.ico">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+                // $("#hw5p1").validate({
+                    // Rules for each input item
+                    // rules:
+                    // {
+                        // num: { required: true, number: true, min: 0, max: 10 }
+                    // },
+
+                    // messages:
+
+                    // {
+                        // num: "Please enter a number between 0 and 10",
+                    // }
+                // });
+            });
+    </script>
 </head>
 
 <body>
@@ -42,6 +59,33 @@
     <div class="container">
         <section class="col">
             <h1 class="row">Homework Page 5</h1>
+            <form name="hw5p1">
+                <input class="black" type="text" name="hw5text" size="10"><br><br>
+                
+                <input type="radio" id="hw5p1radio" name="hw5p1radio" value="HTML">
+                <label for="hw5p1radio">Radio button</label><br>
+                
+                <input type="radio" id="hw5p1radio" name="hw5p1radio2" value="HTML">
+                <label for="hw5p1radio2">Radio button 2</label><br>
+                
+                <input type="radio" id="hw5p1checkbox" name="hw5p1checkbox" value="HTML">
+                <label for="hw5p1checkbox">Checkbox</label><br>
+                
+                <input type="radio" id="hw5p1checkbox2" name="hw5p1checkbox2" value="HTML">
+                <label for="hw5p1checkbox2">Checkbox 2</label><br>
+
+
+                <label for="selectItems">Choose an item:</label>
+                
+                <select class="black" name="selectItems" id="selectItems">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+
+
+            </form>
 
 
 
