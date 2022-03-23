@@ -159,10 +159,12 @@ td {
 @import url('https://fontlibrary.org/face/dejavu-sans-mono');
 
 #putSqHere {
-    font: 1em monospace;
+    /* font-size: 1em; */
+    /* font-family: 'Roboto Mono', monospace; */
+    /* font: 1em Robo monospace; */
     font-family: 'Dejavu Sans Mono', monospace;
-    font-variant-numeric: tabular-nums lining-nums;
-    font-kerning:none;
+    /* font-variant-numeric: tabular-nums lining-nums; */
+    /* font-kerning:none; */
 }
 
 footer {
