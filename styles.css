@@ -156,11 +156,14 @@ td {
     width: 35%;
 }
 
+@import url('https://fontlibrary.org/face/dejavu-sans-mono');
+
 #putSqHere {
     font: 1em monospace;
+    font-family: 'Dejavu Sans Mono', monospace;
+    font-variant-numeric: tabular-nums lining-nums;
+    font-kerning:none;
 }
-
-
 
 footer {
     padding-top: 50px;
