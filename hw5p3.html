@@ -43,42 +43,55 @@
             // userInput = userInput.slice(0,2)
             userInput = userInput.toUpperCase();
 
-            // 
+            
             if (userInput === 'AL' || userInput === 'ALABAMA') {
+
+                document.getElementById("displayRes").innerHTML = '<p>Thanks for your inquiry, here\'s the info you\'ve requested:</p>';
                 document.forms['results'].elements['stNameHere'].value = stInfo[0][0];
                 document.forms['results'].elements['stCapitalHere'].value = stInfo[0][1];
                 document.forms['results'].elements['stPopulHere'].value = stInfo[0][2];
 
             } else if (userInput === 'AK' || userInput === 'ALASKA') {
+
+                document.getElementById("displayRes").innerHTML = '<p>Thanks for your inquiry, here\'s the info you\'ve requested:</p>';
                 document.forms['results'].elements['stNameHere'].value = stInfo[1][0];
                 document.forms['results'].elements['stCapitalHere'].value = stInfo[1][1];
                 document.forms['results'].elements['stPopulHere'].value = stInfo[1][2];
             
             } else if (userInput === 'AZ' || userInput === 'ARIZONA') {
+
+                document.getElementById("displayRes").innerHTML = '<p>Thanks for your inquiry, here\'s the info you\'ve requested:</p>';
                 document.forms['results'].elements['stNameHere'].value = stInfo[2][0];
                 document.forms['results'].elements['stCapitalHere'].value = stInfo[2][1];
                 document.forms['results'].elements['stPopulHere'].value = stInfo[2][2];
 
             } else if (userInput === 'AR' || userInput === 'ARKANSAS') {
+
+                document.getElementById("displayRes").innerHTML = '<p>Thanks for your inquiry, here\'s the info you\'ve requested:</p>';
                 document.forms['results'].elements['stNameHere'].value = stInfo[3][0];
                 document.forms['results'].elements['stCapitalHere'].value = stInfo[3][1];
                 document.forms['results'].elements['stPopulHere'].value = stInfo[3][2];
 
             } else if (userInput === 'CA' || userInput === 'CALIFORNIA') {
-                document.getElementById("displayRes").innerHTML = '<p>Thanks for your inquiry, here\'s the info you\'ve requested.</p>';
+
+                document.getElementById("displayRes").innerHTML = '<p>Thanks for your inquiry, here\'s the info you\'ve requested:</p>';
                 document.forms['results'].elements['stNameHere'].value = stInfo[4][0];
                 document.forms['results'].elements['stCapitalHere'].value = stInfo[4][1];
                 document.forms['results'].elements['stPopulHere'].value = stInfo[4][2];
 
             } else if (userInput === 'CO' || userInput === 'COLORADO') {
+
+                document.getElementById("displayRes").innerHTML = '<p>Thanks for your inquiry, here\'s the info you\'ve requested:</p>';
                 document.forms['results'].elements['stNameHere'].value = stInfo[5][0];
                 document.forms['results'].elements['stCapitalHere'].value = stInfo[5][1];
                 document.forms['results'].elements['stPopulHere'].value = stInfo[5][2];
 
             } else {
-                userInput = userInput.slice(0, 1) + userInput.slice(0, 1);
-                console.log(userInput);
+
+                userInput = userInput.slice(0, 1) + userInput.slice(1, -1);
+                // console.log(userInput);
                 document.getElementById("displayRes").innerHTML = `Your entry ${userInput} isn\'t a match, try again.`;
+
             }
 
         }
