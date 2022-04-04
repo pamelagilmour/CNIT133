@@ -24,6 +24,65 @@
     <link rel="icon" type="image/x-icon" href="fav.ico">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script>
+        function process() {
+
+            // mock data base or api call
+            const stInfo = [
+                [ 'Alabama', 'Montgomery', '4,887,871'],
+                [ 'Alaska', 'Juneau', '737,438'],
+                [ 'Arizona', 'Phoenix', '7,171,646'],
+                [ 'Arkansas', 'Little Rock', '3,010,825'],
+                [ 'California', 'Sacramento', '39,557,045'],
+                [ 'Colorado', 'Denver', '5,694,564']
+
+            ]
+
+            // format userInput into useable form
+            let userInput = document.forms['enterSt'].elements['enterStHere'].value;
+            // userInput = userInput.slice(0,2)
+            userInput = userInput.toUpperCase();
+
+            // 
+            if (userInput === 'AL' || userInput === 'ALABAMA') {
+                document.forms['results'].elements['stNameHere'].value = stInfo[0][0];
+                document.forms['results'].elements['stCapitalHere'].value = stInfo[0][1];
+                document.forms['results'].elements['stPopulHere'].value = stInfo[0][2];
+
+            } else if (userInput === 'AK' || userInput === 'ALASKA') {
+                document.forms['results'].elements['stNameHere'].value = stInfo[1][0];
+                document.forms['results'].elements['stCapitalHere'].value = stInfo[1][1];
+                document.forms['results'].elements['stPopulHere'].value = stInfo[1][2];
+            
+            } else if (userInput === 'AZ' || userInput === 'ARIZONA') {
+                document.forms['results'].elements['stNameHere'].value = stInfo[2][0];
+                document.forms['results'].elements['stCapitalHere'].value = stInfo[2][1];
+                document.forms['results'].elements['stPopulHere'].value = stInfo[2][2];
+
+            } else if (userInput === 'AR' || userInput === 'ARKANSAS') {
+                document.forms['results'].elements['stNameHere'].value = stInfo[3][0];
+                document.forms['results'].elements['stCapitalHere'].value = stInfo[3][1];
+                document.forms['results'].elements['stPopulHere'].value = stInfo[3][2];
+
+            } else if (userInput === 'CA' || userInput === 'CALIFORNIA') {
+                document.getElementById("displayRes").innerHTML = '<p>Thanks for your inquiry, here\'s the info you\'ve requested.</p>';
+                document.forms['results'].elements['stNameHere'].value = stInfo[4][0];
+                document.forms['results'].elements['stCapitalHere'].value = stInfo[4][1];
+                document.forms['results'].elements['stPopulHere'].value = stInfo[4][2];
+
+            } else if (userInput === 'CO' || userInput === 'COLORADO') {
+                document.forms['results'].elements['stNameHere'].value = stInfo[5][0];
+                document.forms['results'].elements['stCapitalHere'].value = stInfo[5][1];
+                document.forms['results'].elements['stPopulHere'].value = stInfo[5][2];
+
+            } else {
+                userInput = userInput.slice(0, 1) + userInput.slice(0, 1);
+                console.log(userInput);
+                document.getElementById("displayRes").innerHTML = `Your entry ${userInput} isn\'t a match, try again.`;
+            }
+
+        }
+    </script>
 </head>
 
 <body>
@@ -43,18 +102,28 @@
         <section class="col">
             <h1 class="row">Homework Page 5</h1>
 
-            <script>
-                function process() {
-
-                }
-            </script>
-
             <form name="enterSt">
                 Enter your state selection:
                 <input class="black" type="text" name="enterStHere" size="10"><br><br>
                 <!-- Input button -->
                 <input class="black" type="button" onclick="process()" value="State Info"><br><br>
+                
             </form>
+            
+            <form name="results">
+                <h2 id="displayRes" style="font-size: medium " >Your results will display below: </h2>
+                <br><br>
+                State Name:
+                <input class="black" type="text" name="stNameHere" size="10"><br><br>
+                State Capital:
+                <input class="black" type="text" name="stCapitalHere" size="10"><br><br>
+                Population:
+                <input class="black" type="text" name="stPopulHere" size="10"><br><br>
+                <input class="black" type="reset" value="Reset Results" onclick="window.location.reload()">
+
+            </form>
+
+
 
         </section>
 
