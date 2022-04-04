@@ -22,52 +22,62 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script> -->
-
+    <!-- <script src="https://code.jquery.com/jquery-1.10.1.js"></script> -->
+    <!-- <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script>
 
             function process() {
 
                 // check for any input
                 let data = document.getElementById("hw5text").value;
-
-                if (data == "" || data == null) {
-                    alert('You must enter data into the textbox. Please try again.')
-                }
+                let selectedRadio = false;
+                let selectedCheck = false;
+                let selectedCar = document.getElementById("selectItems").value;
 
                 // check if user selected at least one radio button
-                let selectedRadio = false;
-
-                for (let i = 0; i < 2; i++ ) {
-                    // if (document.myform.)
+                for (let i = 0; i < 2; i++) {
+                    if (document.hw5p1.hw5p1radio[i].checked) {
+                        selectedRadio = true;
+                        break;
+                    }
                 }
+
+                for (let i = 0; i < 2; i++) {
+                    if (document.hw5p1.hw5p1checkbox[i].checked) {
+                        selectedCheck = true;
+                        break;
+                    }
+                }
+
+                if (data == "" || data == null) {
+
+                    alert('You must enter data into the textbox. Please try again.');
+
+                } else if (selectedRadio == false) {
+
+                    alert('Select at least one radio button.');
+
+                } else if (selectedCheck == false) {
+
+                    alert('Select at least one checkbox.');
+
+                } else if (selectedCar == false) {
+
+                    alert('Choose a car from the drop down menu.');
+
+                }
+
+                document.getElementById("confirmMsg").innerHTML = 'Your selections have been submitted! :D';
+                // 
+
 
 
 
             }
 
-        // function process () {
-        //     $(document).ready(function() {
-        //         $("#hw5p1").validate({
-        //             rules: {
-        //                 hw5text: {
-        //                     required: "You must enter data into the textbox. Please try again."
-        //                 },
-        //                 selectItems: {
-        //                     required: "Please select an option from the drop down menu."
-        //                 }
-
-        //             }
-        //         }
-
-        //         );
-
-        //     });
-        // }
-
+       
     </script>
 </head>
 
@@ -87,36 +97,50 @@
     <div class="container">
         <section class="col">
             <h1 class="row">Homework Page 5</h1>
-            <form id="" name="hw5p1" action="" method="post">
+            <form id="hw5p1" name="hw5p1">
+                <div>
+                    <label for="hw5text">Please enter data here:</label>
+                    <input id="hw5text" name="hw5text" class="black" type="text" minlength="1" size="10" required><br><br>
 
-                <label for="hw5text">Please enter data here:</label>
-                <input id="hw5text" name="hw5text" class="black" type="text" minlength="1" size="10" required><br><br>
-                
-                
-                <input id="hw5p1radio" type="radio" name="hw5p1radio" value="HTML">
-                <label for="hw5p1radio">Radio button</label><br>
-                
-                <input type="radio" id="hw5p1radio" name="hw5p1radio2" value="HTML">
-                <label for="hw5p1radio2">Radio button 2</label><br>
-                
-                <input type="checkbox" id="hw5p1checkbox" name="hw5p1checkbox" value="HTML">
-                <label for="hw5p1checkbox">Checkbox</label><br>
-                
-                <input type="checkbox" id="hw5p1checkbox2" name="hw5p1checkbox2" value="HTML">
-                <label for="hw5p1checkbox2">Checkbox 2</label><br>
+                </div>
+                <div>
+                    <input id="hw5p1radio" type="radio" name="hw5p1radio" value="HTML">
+                    <label for="hw5p1radio">Radio button</label><br>
 
+                </div>
+                <div>
+                    <input id="hw5p1radio2" type="radio" name="hw5p1radio" value="HTML">
+                    <label for="hw5p1radio2">Radio button 2</label><br>
 
-                <label for="selectItems">Select an item:</label>
-                
-                <select class="black" name="selectItems" id="selectItems">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                </select>
-                <br><br>
+                </div>
+                <div>
+                    <input type="checkbox" id="hw5p1checkbox" name="hw5p1checkbox" value="HTML">
+                    <label for="hw5p1checkbox">Checkbox</label><br>
 
-                <input class="black" type="button" onclick="process()" value="SUBMIT">
+                </div>
+                <div>
+                    <input type="checkbox" id="hw5p1checkbox2" name="hw5p1checkbox" value="HTML">
+                    <label for="hw5p1checkbox2">Checkbox 2</label><br>
+
+                </div>
+                <div>
+                    <label for="selectItems">Select an item:</label>
+                    
+                    <select class="black" name="selectItems" id="selectItems">
+                        <option name="selectCar" value>Choose a car</option>
+                        <option name="selectCar" value="volvo">Volvo</option>
+                        <option name="selectCar" value="saab">Saab</option>
+                        <option name="selectCar" value="mercedes">Mercedes</option>
+                        <option name="selectCar" value="audi">Audi</option>
+                    </select>
+                    <br><br>
+
+                </div>
+
+                <input class="black" type="button" value="SUBMIT" onclick="process()">
+                <input class="black" type="reset" value="RESET" onclick="window.location.reload()"><br><br>
+
+                <h3 id="confirmMsg"></h3>
 
 
             </form>
