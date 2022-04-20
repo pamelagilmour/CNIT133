@@ -29,7 +29,10 @@
     <script>
 
         function process() {
-            
+            let userInput = document.forms["form6"].elements["usrInput"].value;
+
+            // let pageOutput = userInput;
+            document.forms["form6"].elements["pageOutput"].value = userInput;
 
         }
 
@@ -67,8 +70,8 @@
     
      
     
-    When presenting the output, make sure that there is no error message written - DO NOT PRESENT THE
-    RESULT USING ALERT.
+    When presenting the output, make sure that there is no error message written - 
+    DO NOT PRESENT THE RESULT USING ALERT.
 
     When displaying the output, 
     depending on which method you chose, 
@@ -79,8 +82,8 @@
     (just in case you decided to use Math.floor and Math.round for
     some of the requests for this part). 
     Validate the input and display an error message if the input is invalid. 
-    It is
-    acceptable to use jQuery for this problem if you prefer. -->
+    
+    It is acceptable to use jQuery for this problem if you prefer. -->
 
     <header class="header">CNIT 133 Homework 6 - Objects</header>
     <div class="container">
@@ -101,10 +104,10 @@
     to display the output. -->
             <form name="form6">
                 <!-- Input box -->
-                Input: <input class="black" type="text" name="" size="10"><br><br>
+                Input: <input class="black" type="text" name="usrInput" size="10"><br><br>
 
                 <!-- Output box -->
-                Output: <textarea class="black" type="text" name="" size=""></textarea><br><br>
+                Output: <textarea class="black" type="text" name="pageOutput" size=""></textarea><br><br>
                 <!-- Input buttons -->
                 <input class="black" type="button" onclick="process()" value="SUBMIT">
                 <input class="black" type="reset" value="Reset Inputs">
