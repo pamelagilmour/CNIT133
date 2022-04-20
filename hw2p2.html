@@ -65,13 +65,12 @@
             
 
             // give output boxes values from Math operations
-            // document.forms["formB"].elements["span"].value = sum;
             document.forms["formB"].elements["result-sum"].value = sum;
             document.forms["formB"].elements["result-avg"].value = average.toFixed(2);
             document.forms["formB"].elements["result-prod"].value = product;
             document.forms["formB"].elements["result-small"].value = smallest;
             document.forms["formB"].elements["result-large"].value = largest;
-            // console.log(document.forms["formB"].elements);
+
 
 
             
@@ -84,55 +83,14 @@
             // that defines a click event handler for the button,
             function() {
                 $("button").on("click", () => {
-                    // $("textarea").hide();
-                    // $("input:text").animate();
-
 
                     $("textarea").fadeTo("slow", 0.15);
 
-
-                    // let fadeEle = $("textarea").val();
-                    // $("textarea:text").val().fadeTo("slow", 0.15);
-
-                })
-                // $("textarea").children().fadeTo("slow", 0.15);
-                // $("button").click(function() {
-                    // const qtextarea = $("textarea");
-                    // console.log(qtextarea);
-                    // qtextarea.fadeTo("slow", 0.15);
-                    // qtextarea.hide();
-
-
-
-                    // $("textarea").fadeTo("slow", 0.15);
-
-                    // $("textarea").val(function() {
-
-                        // return $("val").fadeTo("slow", 0.15);
-                        
-                    // })
-
-                        // These don't work
-                    // $("textarea:value").fadeTo("slow", 0.15);
-                    // $("textarea").on("blur", function () {
-                    //     $(this).val(function (i, val) {
-                    //         return val.toUpperCase();
-                    //     });
-                    // });
-
-                    // clicking the button fades the results in the textarea or div where you put the results.
-
-                    // console.log($("textarea").val());
-                    // $("textarea").val(this.fadeTo("slow", 0.15));
-                    // $("textarea").val().fadeTo("slow", 0.15);
-                    // $("textarea").val.fadeTo("slow", 0.15)
-                        // .fadeTo("slow", 0.15);
-                    // console.log(val());
-
                 })
 
-            // }
-        // )
+            }
+        )
+
     </script>
 
 
