@@ -48,7 +48,7 @@
 
 
                 document.form6.pageOutput.value = 
-                "The entered number: " + pageInput + "\nRounded to the nearest integer using Math.round(): " + roundToInt( pageInput ) + "\nSquare root rounded to the nearest integer using Math.sqrt(): " + roundSqFloor( pageInput ) + "\nRounded to the nearest tenth using .toFixed(): " + roundToTenth( pageInput ) + "\nRounded to the nearest hundredth using Math.floor(): " + roundToHundr( pageInput ) + "\nRounded to the nearest hundredth using Math.round(): " + roundToThou( pageInput ); 
+                "The entered number: " + pageInput + "\nRounded to the nearest integer using Math.round(): " + roundToInt( pageInput ) + "\nSquare root rounded to the nearest integer using Math.sqrt(): " + roundSqFloor( pageInput ) + "\nRounded to the nearest tenth using .toFixed(): " + roundToTenth( pageInput ) + "\nRounded to the nearest hundredth using .toFixed(): " + roundToHundr( pageInput ) + "\nRounded to the nearest hundredth using .toFixed(): " + roundToThou( pageInput ); 
             }
 
             // a) Round the floating-point number to the nearest integer
@@ -59,7 +59,9 @@
             // b) Calculate the square root of the floating-point number and round it to an integer
             function roundSqFloor( input ) {
                 return Math.floor(Math.sqrt( input ));
-            } 
+            }
+
+            // be sure to use toFixed() for displaying the number to the nearest tenths, hundredths, and thousandths positions 
 
             // c) Round the floating - point number to the nearest tenths position
             function roundToTenth( input ) { 
@@ -68,12 +70,14 @@
 
             // d) Round the floating-point number to the nearest hundredths position
             function roundToHundr( input ) {
-                return Math.floor( input * 100 ) / 100;
+                return input.toFixed(2);
+
             } 
             
             // e) Round the floating - point number to the nearest thousandths position
             function roundToThou( input ) { 
-                return Math.round( input * 1000 ) / 1000;
+                return input.toFixed(3);
+
             } 
 
 
@@ -84,38 +88,6 @@
 
 <body>
     <!-- insert comments into every homework assignment  -->
-
-    <!-- Part 1:
-    Create a webpage that contains a script that has a function that uses Math.round, Math.sqrt, Math.floor, toFixed() etc.
-    to obtain the following:
-    
-    Your page should:
-    
-    Script should display the original floating-point number the user typed, 
-    the number rounded to the nearest integer, 
-    the square root of the number that is then rounded to an integer, 
-    the number rounded to the nearest tenth, 
-    the number rounded to the nearest hundredth, 
-    and the number rounded to the nearest thousandth.
-
-    
-    
-     
-    
-    When presenting the output, make sure that there is no error message written - 
-    DO NOT PRESENT THE RESULT USING ALERT.
-
-    When displaying the output, 
-    depending on which method you chose, 
-    be sure to use toFixed() for displaying the number to
-    the nearest tenths, 
-    hundredths, 
-    and thousandths positions 
-    (just in case you decided to use Math.floor and Math.round for
-    some of the requests for this part). 
-    Validate the input and display an error message if the input is invalid. 
-    
-    It is acceptable to use jQuery for this problem if you prefer. -->
 
     <header class="header">CNIT 133 Homework 6 - Objects</header>
     <div class="container">
