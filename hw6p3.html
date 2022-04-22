@@ -52,6 +52,35 @@
     <div class="container">
         <section class="col">
             <h1 class="row">Homework Page 6</h1>
+            <!-- 
+
+                The script should use String method split to extract the area code as a token, 
+                the first 3 digits of the phone number as a token, 
+                and the last 4 digits of the phone number as a token
+                
+                Make sure that when the user is typing the phone number it will automatically put the phone number in the (999) 999-9999 format -
+                
+                I suggest that you use the jQuery mask for input. 
+                
+                But you can use Regex to validate the input of the user if you prefer instead of the jQuery mask but, in that case, 
+                
+                DO NOT PRESENT the final result if the user does not enter the phone number in the right format! 
+             -->
+
+            <form name="form6p3">
+                <!-- Input box -->
+                Please enter a phone number, formatted (999) 999-9999 : 
+                <input class="black" type="text" id="phoneInput" name="phoneInput" size="10"><br><br>
+            
+                <!-- Output boxes -->
+                Area code: <input class="black" id="areaCodeOut" name="areaCodeOut" readonly=""><br><br>
+                First 3 digits: <input class="black" id="first3Out" name="first3Out" readonly=""><br><br>
+                Last 4 digits: <input class="black" id="last4Out" name="last4Out" readonly=""><br><br>
+
+                <!-- Input buttons -->
+                <input class="black" type="button" onclick="process()" value="SUBMIT">
+                <input class="black" type="reset" value="Reset Inputs">
+            </form>
 
         </section>
     </div>
