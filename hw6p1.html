@@ -29,13 +29,55 @@
     <script>
 
         function process() {
-            let userInput = document.forms["form6"].elements["usrInput"].value;
 
-            // let pageOutput = userInput;
-            document.forms["form6"].elements["pageOutput"].value = userInput;
+            // RegEx literal
+            const re = new RegExp('^[0-9]{1,11}\.[0-9]{4,}$');
+            // Be sure to use parseFloat() for the inputted number.
+            let pageInput = parseFloat(document.getElementById("usrInput").value);
+
+            // validate input
+            if (pageInput == "" || (!(re.test(document.getElementById("usrInput").value)))) {
+                
+                document.getElementById("pageOutput").value = ""; 
+                document.getElementById("errorMsg").innerHTML = "Please try again.";
+
+
+            } else {
+
+                document.getElementById("errorMsg").value = "";
+
+
+                document.form6.pageOutput.value = 
+                "The entered number: " + pageInput + "\nRounded to the nearest integer using Math.round(): " + roundToInt( pageInput ) + "\nSquare root rounded to the nearest integer using Math.sqrt(): " + roundSqFloor( pageInput ) + "\nRounded to the nearest tenth using .toFixed(): " + roundToTenth( pageInput ) + "\nRounded to the nearest hundredth using Math.floor(): " + roundToHundr( pageInput ) + "\nRounded to the nearest hundredth using Math.round(): " + roundToThou( pageInput ); 
+            }
+
+            // a) Round the floating-point number to the nearest integer
+            function roundToInt ( input ) {
+                return Math.round( input );
+            } 
+
+            // b) Calculate the square root of the floating-point number and round it to an integer
+            function roundSqFloor( input ) {
+                return Math.floor(Math.sqrt( input ));
+            } 
+
+            // c) Round the floating - point number to the nearest tenths position
+            function roundToTenth( input ) { 
+                return input.toFixed(1);
+            }
+
+            // d) Round the floating-point number to the nearest hundredths position
+            function roundToHundr( input ) {
+                return Math.floor( input * 100 ) / 100;
+            } 
+            
+            // e) Round the floating - point number to the nearest thousandths position
+            function roundToThou( input ) { 
+                return Math.round( input * 1000 ) / 1000;
+            } 
+
 
         }
-
 
     </script>
 </head>
@@ -46,19 +88,9 @@
     <!-- Part 1:
     Create a webpage that contains a script that has a function that uses Math.round, Math.sqrt, Math.floor, toFixed() etc.
     to obtain the following:
-    a) round the floating-point number to the nearest integer
-    b) calculate the square root of the floating-point number and round it to an integer
-    c) round the floating-point number to the nearest tenths position
-    d) round the floating-point number to the nearest hundredths position
-    e) round the floating-point number to the nearest thousandths position
     
     Your page should:
     
-    Require the user to enter a floating-point number with AT LEAST 4 decimal positions (no less than that).
-
-    If the user types any number with less than 4 decimal positions, 
-    show an error message and do not show any result.
-
     Script should display the original floating-point number the user typed, 
     the number rounded to the nearest integer, 
     the square root of the number that is then rounded to an integer, 
@@ -66,7 +98,7 @@
     the number rounded to the nearest hundredth, 
     and the number rounded to the nearest thousandth.
 
-    Be sure to use parseFloat() for the inputted number. 
+    
     
      
     
@@ -99,15 +131,18 @@
     <div class="container">
         <section class="col">
             <h1 class="row">Homework Page 6</h1>
+            <!-- Error message appears here -->
+            <div id="errorMsg"></div>
 
             <!-- Use a form input box that the user will use to input and a textarea
     to display the output. -->
             <form name="form6">
                 <!-- Input box -->
-                Input: <input class="black" type="text" name="usrInput" size="10"><br><br>
+                
+                Please enter a number with at least 4 decimal places: <input class="black" type="text" id="usrInput" name="usrInput" size="10"><br><br>
 
                 <!-- Output box -->
-                Output: <textarea class="black" type="text" name="pageOutput" size=""></textarea><br><br>
+                Output: <textarea class="black" id="pageOutput" name="pageOutput" rows="8" cols="60" readonly=""></textarea><br><br>
                 <!-- Input buttons -->
                 <input class="black" type="button" onclick="process()" value="SUBMIT">
                 <input class="black" type="reset" value="Reset Inputs">
