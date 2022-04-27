@@ -29,6 +29,13 @@
     <script>
 
         function process() {
+            let charCount = 0;
+
+            let userSearchInput = document.getElementById('searchUsrInput').value.toLowerCase().charAt( 0 );
+            console.log(userSearchInput);
+
+
+
 
         }
 
@@ -36,7 +43,7 @@
     </script>
 </head>
 
-<body onload="document.getElementById('').focus(); " >
+<body onload="document.getElementById('searchUsrInput').focus(); " >
     <!-- insert comments into every homework assignment  -->
     <header class="header">CNIT 133 Homework 6 - Objects</header>
     <div class="container">
@@ -56,6 +63,9 @@
                 Create a webpage that contains 
 
                 a script using a form that 
+
+                Use a form textarea for the text and a form input box for the search character. 
+
             -->
             <!--
 
@@ -66,7 +76,7 @@
                 
                 uses the String method charAt to determine the number of occurrences of the search character within the text. 
                 
-                Use a form textarea for the text and a form input box for the search character. 
+
                 
                 If the search character is found within the text, 
                 
@@ -101,11 +111,13 @@
                 <!-- allows the user to input several lines of text and a search character and  -->
                 <p>
                     "Search for a character: "
-                    <input id="searchUsrInput" type="text" size="20">
-                    <input type="button" value="Search" onclick="process()">
+                    <input class="black" id="searchUsrInput" type="text" size="20">
+                    <input class="black" type="button" value="Search" onclick="process()">
                     <br><br>
                     "Instances of your search character in: "
-                    <textarea cols="70" rows="1" id="searchOutput"></textarea>
+                    <textarea cols="30" rows="1" id="searchOutput"></textarea>
+                    <br><br>
+                    <input class="black" type="reset" value="Reset">
 
 
                 </p>
