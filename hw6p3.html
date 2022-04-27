@@ -22,20 +22,31 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
-    <!-- <script src="https://code.jquery.com/jquery-1.10.1.js"></script> -->
-    <!-- <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://rawgit.com/digitalBush/jquery.maskedinput/1.4.1/dist/jquery.maskedinput.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script>
 
-        $(document).ready(function () {
-                jQuery(function ($) {
-                    $("#").mask("(999)999-9999");
+        $( document ).ready( function() {
+                jQuery( function($) {
+                    $("#phoneInput").mask("(999)999-9999");
                 });
             }); 
 
 
         function process() {
+            if ( $('#form6p3').valid()) {
+                // Initialize variables
+
+                // Split user input with string object method '.split()'
+
+                // Output 
+
+                // Get first 3, zip code
+
+
+            }
 
         }
 
@@ -77,7 +88,7 @@
             <form name="form6p3">
                 <!-- Input box -->
                 Please enter a phone number, formatted (999) 999-9999 : 
-                <input class="black" type="text" id="phoneInput" name="phoneInput" size="10"><br><br>
+                <input class="black" type="text" id="phoneInput" name="phoneInput" size="15"><br><br>
             
                 <!-- Output boxes -->
                 Area code: <input class="black" id="areaCodeOut" name="areaCodeOut" readonly=""><br><br>
