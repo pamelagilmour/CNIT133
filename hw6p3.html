@@ -87,18 +87,22 @@
             <h1 class="row">Homework Page 6</h1>
 
             <form id="form6p3" name="form6p3">
-                <!-- Input box -->
-                Please enter a phone number, formatted (999) 999-9999 : 
-                <input class="black" type="text" id="phoneInput" name="phoneInput" size="10"><br><br>
-            
-                <!-- Output boxes -->
-                Area code: <input class="black" id="areaCodeOut" name="areaCodeOut" size="3" readonly=""><br><br>
-                First 3 digits: <input class="black" id="first3Out" name="first3Out" size="3" readonly=""><br><br>
-                Last 4 digits: <input class="black" id="last4Out" name="last4Out" size="4" readonly=""><br><br>
+                <p>
+                    <!-- Input box -->
+                    Please enter a phone number, formatted (999) 999-9999 :
+                    <input class="black" type="text" id="phoneInput" name="phoneInput" size="10"><br><br>
+                    
+                    <!-- Output boxes -->
+                    Area code: <input class="black" id="areaCodeOut" name="areaCodeOut" size="3" readonly=""><br><br>
+                    First 3 digits: <input class="black" id="first3Out" name="first3Out" size="3" readonly=""><br><br>
+                    Last 4 digits: <input class="black" id="last4Out" name="last4Out" size="4" readonly=""><br><br>
+                    
+                    <!-- Input buttons -->
+                    <input class="black" type="button" onclick="process()" value="SUBMIT">
+                    <input class="black" type="reset" value="Reset Inputs">
 
-                <!-- Input buttons -->
-                <input class="black" type="button" onclick="process()" value="SUBMIT">
-                <input class="black" type="reset" value="Reset Inputs">
+                </p>
+                
             </form>
 
         </section>
