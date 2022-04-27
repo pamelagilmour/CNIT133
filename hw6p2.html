@@ -32,9 +32,32 @@
             let charCount = 0;
 
             let userSearchInput = document.getElementById('searchUsrInput').value.toLowerCase().charAt( 0 );
-            console.log(userSearchInput);
+            // console.log(userSearchInput);
+
+            let searchString = 'Pamela J Gilmour, Software Engineer';
+
+            searchString.toLowerCase();
+
+            for ( i = 0; i < searchString.length; i++ ) {
+
+                if ( searchString.charAt(i) === userSearchInput ) {
+
+                    charCount++;
+
+                }
+
+                if (charCount !== 0) {
+
+                    document.getElementById('searchOutput').value = '" ' + userSearchInput + ' " is found in the text ' + charCount + ' times.';
+
+                } else {
+
+                    document.getElementById('searchOutput').value = '" ' + userSearchInput + ' " is not found in the text.';
 
 
+                }
+
+            }
 
 
         }
@@ -58,7 +81,7 @@
     </div>
     <div class="container">
         <section class="col">
-            <h1 class="row">Homework Page 6</h1>
+            <h1 class="row">Homework Page 6 - Search using charAt()</h1>
             <!-- 
                 Create a webpage that contains 
 
@@ -69,13 +92,6 @@
             -->
             <!--
 
-                
-                
-
-
-                
-                uses the String method charAt to determine the number of occurrences of the search character within the text. 
-                
 
                 
                 If the search character is found within the text, 
@@ -108,21 +124,20 @@
             -->
 
             <form id="form6p2" name="form6p2">
-                <!-- allows the user to input several lines of text and a search character and  -->
+                <!-- allows the user to input several lines of text and a search character -->
+                <h2>Sample Text: Pamela J Gilmour, Software Engineer</h2>
+                <br><br>
                 <p>
-                    "Search for a character: "
+                    Enter a character you would like to search for: 
                     <input class="black" id="searchUsrInput" type="text" size="20">
                     <input class="black" type="button" value="Search" onclick="process()">
                     <br><br>
-                    "Instances of your search character in: "
-                    <textarea cols="30" rows="1" id="searchOutput"></textarea>
+                    Instances of your search character in the Sample Text: 
+                    <textarea class="black" cols="30" rows="1" id="searchOutput"></textarea>
                     <br><br>
                     <input class="black" type="reset" value="Reset">
 
-
                 </p>
-
-
 
             </form>
 
