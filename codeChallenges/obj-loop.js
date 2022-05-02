@@ -20,25 +20,31 @@ let thing1 = [
 ];
 
 // Loop array 'thing1' and output the fields in a table form
+
+// const ids = thing1.map(ofThing => {
+// 	// return ofThing.id + ofThing.type + ;
+// })
+
+// console.log(ids);
+
+// for (let index in thing1) {
+// 	thing1.map(ofThing => {
+// 	return ofThing.type;
+// 	})
+// }
+
+
+
 // Sum the field 'count' and output the value
+
+let sum = 0;
+
+for (i = 0; i < thing1.length; i++) {
+	sum += parseInt(thing1[i].count);
+
+	// console.log(thing1[i]);
+}
+
+console.log(sum);
+
 // Add a row at the beginning of the output with the field names
-function hello () {
-
-
-    document.getElementById('hello').innerHTML += "<td>'Hello'</td>";
-
-
-}
-
-function loopObj () {
-
-    for (let property in thing1) {
-
-			// console.log(`<td>${thing1[property].id}: ${thing1[property].color}</td>`);
-
-			document.getElementById('hello').innerHTML += `<td>${thing1[property].id}: ${thing1[property].color}</td>`;
-
-		}
-
-}
-
