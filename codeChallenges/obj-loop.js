@@ -14,7 +14,7 @@ let thing1 = [
 	{
 		id: '123cfe',
 		type: 'baz',
-		color: 'blue',
+		colour: 'blue',
 		count: 123,
 	},
 ];
@@ -31,7 +31,7 @@ let row4 = [];
 for (i = 0; i < thing1.length; i++) {
 	row1.push(thing1[i].id);
 	row2.push(thing1[i].type);
-	row3.push(thing1[i].color);
+	row3.push(thing1[i].color || thing1[i].colour);
 	row4.push(thing1[i].count);
 
 
@@ -43,7 +43,7 @@ for (i = 0; i < thing1.length; i++) {
 	console.log(row4);
 
 // let rowStr = '';
-// const ids = thing1.map(ofThing1 => { })
+// const ids = thing1.map(ofThing1 => { }) 
 
 // for (let index in thing1) {
 // 	thing1.map(ofThing1 => {

@@ -46,13 +46,26 @@ li a {
     
 }
 
-a:link {
+a:link{
     padding: 1.5rem;
     margin: 10px;
     border-style: groove;
     border-top: none;
     border-left: none;
     border-radius: 20px;
+
+}
+
+.hw7link {
+    width: 15%;
+    /* margin: auto; to center these buttons on the page */
+    margin: auto;
+    /* padding: 1.5rem; */
+    border-style: groove;
+    border-top: none;
+    border-left: none;
+    border-radius: 20px;
+    /* margin: 10px; */
 
 }
 
