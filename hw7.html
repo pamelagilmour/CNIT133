@@ -20,6 +20,40 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.js"></script>
+    <script>
+        // Use jQuery, when user clicks on 'Part 1' or 'Part 2', the description and a link will display beneath the 'link' 
+
+        $(document).ready(
+            function() {
+                // Hide the descriptions for Part 1 and Part 2
+                $('.p1description').hide();
+
+                // Toggle the links titled 'Part 1' and 'Part 2', target by class
+                $('.hw7link').toggle(
+                    function() {
+                        $(this).next('.p1description').slideDown();
+                        $(this).addClass('reset');
+                    },
+
+                    function() {
+                        $(this).next('.p1description').fadeOut();
+                        $(this).removeClass('reset');
+
+                    }
+                )
+
+            }
+
+
+
+
+        );
+
+            
+            
+
+    </script>
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
 </head>
@@ -40,11 +74,14 @@
         </nav>
     </div>
     <div class="container">
-        <section class="col">
+        <section class="col main">
             <h1 class="row">Homework Page 7</h1>
+            <!-- Use jQuery, when user clicks on 'Part 1' or 'Part 2', the description and a link will display beneath the 'link' -->
             <ul>
-                <li><a href="hw7p1.html">Part 1</a></li>
-                <li><a href="hw7p2.html">Part 2</a></li>
+                <li class="hw7link"><a href="hw7p1.html">Part 1</a></li>
+                <li class="p1description"><a >Part 1 Description</a></li>
+                <li class="hw7link"><a href="hw7p2.html">Part 2</a></li>
+                <li class="p1description"><a>Part 2 Description</a></li>
             </ul>
         </section>
     </div>
