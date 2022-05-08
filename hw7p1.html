@@ -24,7 +24,7 @@
     <link rel="icon" type="image/x-icon" href="fav.ico">
 </head>
 
-<body>
+<body class="" id="">
     <!-- insert comments into every homework assignment  -->
     <header class="header">CNIT 133 Homework 7 - Object Model and Event Model</header>
     <div class="container">
@@ -42,14 +42,36 @@
     <div class="container">
         <section class="col">
             <h1 class="row">Homework Page 7 _ Change Styling with className</h1>
-            <form name="hw7p1">
+            <form name="hw7p1" class="hw7p1">
                 <h2>Choose an option to change the styling on this page:</h2>
                 <br>
+                <h3>Background Color:</h3><br>
+                <input type="radio" name="bcolor" onclick="changbkclr(0)">Purple
+                <input type="radio" name="bcolor" onclick="changbkclr(1)">Yellow
+                <input type="radio" name="bcolor" onclick="changbkclr(2)">Orange
+                <br>
+                <h3>Choose font style:</h3><br>
+                <input type="radio" name="fntstyling" onclick="changefontstyle(0)">Italic
+                <input type="radio" name="fntstyling" onclick="changefontstyle(1)">Normal
+                <br>
+                <h3>Choose font weight:</h3><br>
+                <input type="radio" name="fntweight" onclick="changefontweight(0)">Bold
+                <input type="radio" name="fntweight" onclick="changefontweight(1)">Normal
+                <br>
+                <h3>Select font size:</h3><br>
+                <select  class="black" name="fontMenu" id="fontMenu" onchange="chooseFontSize()">
                 
+                    <option value="#"> Select font size </option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
 
             </form>
             <br>
-            <!-- <input type="button" value="Reset the page" onclick="resetPage()"> -->
+            <input class="black" type="button" value="Reset the page" onclick="resetPage()">
+    
+                        <!-- <input type="button" value="Revert to original" onclick="switchToOrig()"> -->
 
         </section>
     </div>
