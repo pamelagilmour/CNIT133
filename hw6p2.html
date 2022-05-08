@@ -29,56 +29,44 @@
     <script>
 
         function process() {
+
+
+            // grab and format the user entered character
+            let userInput = document.getElementById('searchUsrInput').value.toLowerCase();
+
+            let userSearchInput = userInput.toLowerCase();
+
+            // this is the string that is being searched
+            let theString = ' Pamela J Gilmour, Software Engineer';
+
+            // format the string to be all lowercase.
+            let searchString = theString.toLowerCase();
+
+            // counter for the for loop
             let charCount = 0;
-
-            let userSearchInput = document.getElementById('searchUsrInput').value.toLowerCase().charAt( 0 );
-            // console.log(userSearchInput);
-
-            let searchString = 'Pamela J Gilmour, Software Engineer';
-
-            searchString.toLowerCase();
 
             for ( i = 0; i < searchString.length; i++ ) {
 
-                if ( searchString.charAt(i) === userSearchInput ) {
+                if ( searchString.charAt(i) == userSearchInput ) {
 
                     charCount++;
 
                 }
-
-                if (charCount !== 0) {
-
-                    document.getElementById('searchOutput').value = '" ' + userSearchInput + ' " is found in the text ' + charCount + ' times.';
-
-                } else {
-
-                    // create the html for the pop-up window 
-                    // popUpHtml = "<html>\n";
-                    // popUpHtml += "<head>\n";
-                    // popUpHtml += "<title>Character Not Found</title>\n";
-                    // popUpHtml += "</head>\n";
-                    // popUpHtml += "<body>\n";
-                    // popUpHtml += "<div align='center'>\n";
-                    // popUpHtml += "<h4> userSearchInput + 'is not found in the text.'</h4>\n";
-                    // popUpHtml += "<input type='button' value='Close Window' onclick='window.close()'\>\n";
-                    // popUpHtml += "</div>\n";
-                    // popUpHtml += "</body>\n";
-                    // popUpHtml += "</html>";
-                    // console.log(popUpHtml);
-
-                    // open window on the upper right of the screen 
-                    // const errWindow = window.open("", "new_window", "top=220,left=50,width=300,height=100");
-                    // errWindow.focus();
-                    // pump html into to this new opened window 
-                    // errWindow.document.write(popUpHtml);
-                    // tell browser that errWindow document is finished loading 
-                    // errWindow.document.close();
-                    // Put error msg in input text box of original page 
-                    document.getElementById("searchOutput").value = "see popup window"; 
-
-                }
-
             }
+
+            if (charCount !== 0) {
+
+                    document.getElementById('searchOutput').value = `${userSearchInput} is found in the text ${charCount} times.`;
+
+            } else {
+
+                console.log('Hello')!
+
+                // add a message to output textbox 
+                document.getElementById('searchOutput').value = 'see popup window'; 
+            }
+
+
 
 
         }
@@ -113,14 +101,6 @@
             -->
             <!--
 
-
-                
-                If the search character is found within the text, 
-                
-                display the number of occurrences of the search character in another input box or a textarea 
-                
-                (of course, those should be disabled for users to type anything). 
-                
                 If the search character is not found within the text 
                 
                 then display within a new window 
@@ -131,9 +111,7 @@
                 
                 make sure that the output input box (or textarea) would be cleared if that error message is showing, 
                 
-                meaning it would not show any previous result. 
-                
-                Your new window should be a width of 300 pixels, height of 100 pixels, and 
+                meaning it would not show any previous result.
                 
                 should not obscure any of the main content already on the page. 
                 
