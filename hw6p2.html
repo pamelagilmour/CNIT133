@@ -60,22 +60,22 @@
 
             } else {
 
-                console.log('Hello');
-                let popupHtml = "<html><head><title>No Instances</title></head><body></body></html>"
-                // create the HTML for the popup window
-                let actPopup = window.open("", "The Popup", "width=300,height=100,top=220,left=50"
-                );
+                let popupWin = window.open("", "new_window", "width=300,height=100,top=200,left=55,");
+
+                popupWin.focus();
+
+                // pump html into to this new opened window
+
+                popupWin.document.write(`<p align='center'>The character you entered, ${userSearchInput
+} is not found in the search string</p>\n<input type='button' value='Close Window' onclick='window.close()'>`);
+
+                // tell browser that popupWin document is finished loading
+
+                popupWin.document.close();
 
                 // add a message to output textbox 
-                document.getElementById('searchOutput').value = 'see popup window'; 
-                // focus on the window to receive events/html
-                actPopup.focus();
+                document.getElementById('searchOutput').value = 'see popup window';
 
-                // add the popupHTML html in the new window actPopup
-                actPopup.document.write(popupHTML);
-
-                // signal to browser actPopup is loaded
-                actPopup.document.close();
 
                 
             }
@@ -113,19 +113,6 @@
                 Use a form textarea for the text and a form input box for the search character. 
 
             -->
-            <!--
-
-                If the search character is not found within the text 
-                
-
-                the message, 'Search character not found in text string!' along with the search character - 
-                
-                make sure that the output input box (or textarea) would be cleared if that error message is showing, 
-                
-                meaning it would not show any previous result.
-                
-            -->
-
             <form id="form6p2" name="form6p2">
                 <!-- allows the user to input several lines of text and a search character -->
                 <h2>Sample Text: Pamela J Gilmour, Software Engineer</h2>
@@ -138,7 +125,7 @@
                     Instances of your search character in the Sample Text: 
                     <textarea class="black" cols="30" rows="1" id="searchOutput"></textarea>
                     <br><br>
-                    <input class="black" type="reset" value="Reset">
+                    <input class="black" type="reset" value="Reset" onclick="location.reload()">
 
                 </p>
 

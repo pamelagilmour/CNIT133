@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Objects exercise - new window">
+    <title>Exercise 4</title>
+
+    <script>
+        function workit() {
+
+            var number = document.getElementById("numb").value;
+
+            if (number > 0 && number < 11) {
+
+                var product = document.getElementById("numb").value * 50;
+                document.getElementById("prod").value = product;
+            }
+
+            else {
+
+                // assemble HTML to pump into new window:
+
+                var myText = "<html>\n";
+                myText += "<head>\n";
+                myText += "<title>Invalid number</title>\n";
+                myText += "</head>\n";
+                myText += "<body>\n";
+                myText += "<div align='center'>\n";
+                myText += "<h4>Invalid number " + number + " is not between 1 and 10</h4>\n";
+                myText += "<input type='button' value='Close Window' onclick='window.close()'>\n";
+                myText += "</div>\n";
+                myText += "</body>\n";
+                myText += "</html>";
+
+                // open window on the upper right of the screen
+
+                var errWindow = window.open("", "new_window", "top=220,left=50,width=300,height=100");
+
+                errWindow.focus();
+
+                // pump html into to this new opened window
+
+                errWindow.document.write(myText);
+
+                // tell browser that errWindow document is finished loading
+
+                errWindow.document.close();
+
+                // Put error msg in input text box of original page
+
+                document.getElementById("prod").value = "see popup window";
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f5f5dc;
+        }
+
+        .body {
+            width: 505px;
+            margin: 0px auto;
+        }
+    </style>
+
+</head>
+
+<body onload="document.getElementById('numb').focus();">
+
+    <section class="body">
+
+        <h3>A valid number is between 1 and 10</h3>
+
+        <form name="myForm">
+
+            <p>Enter a number:<br>
+                <input type="text" id="numb" size="5">
+            </p>
+
+            <p>Your number times 50 is
+                <input id="prod" type="text" size="20">
+                <input type="button" value="Go" onclick="workit()">
+                <input type="reset" value="Reset" onclick="location.reload();">
+            </p>
+
+        </form>
+
+    </section>
+
+</body>
+</html>
