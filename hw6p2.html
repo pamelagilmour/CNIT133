@@ -60,10 +60,24 @@
 
             } else {
 
-                console.log('Hello')!
+                console.log('Hello');
+                let popupHtml = 'Hello Again'
+                // create the HTML for the popup window
+                let actPopup = window.open("", "The Popup", "width=300,height=100,top=220,left=50"
+                );
 
                 // add a message to output textbox 
                 document.getElementById('searchOutput').value = 'see popup window'; 
+                // focus on the window to receive events/html
+                actPopup.focus();
+
+                // add the popupHTML html in the new window actPopup
+                actPopup.document.write(popupHTML);
+
+                // signal to browser actPopup is loaded
+                actPopup.document.close();
+
+                
             }
 
 
@@ -103,17 +117,12 @@
 
                 If the search character is not found within the text 
                 
-                then display within a new window 
-                
-                (using the window.open() method), 
-                
+
                 the message, 'Search character not found in text string!' along with the search character - 
                 
                 make sure that the output input box (or textarea) would be cleared if that error message is showing, 
                 
                 meaning it would not show any previous result.
-                
-                should not obscure any of the main content already on the page. 
                 
             -->
 
