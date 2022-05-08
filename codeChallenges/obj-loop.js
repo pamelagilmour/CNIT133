@@ -19,6 +19,9 @@ let thing1 = [
 	},
 ];
 
+// https://flexiple.com/loop-through-object-javascript
+// You can't loop thru an object
+
 // Loop array 'thing1' and output the fields in a table form
 
 let topRow = Object.keys(thing1[0]);
@@ -36,20 +39,16 @@ for (i = 0; i < thing1.length; i++) {
 
 
 }
-	console.log(topRow);
-	console.log(row1);
-	console.log(row2);
-	console.log(row3);
-	console.log(row4);
+	// console.log(topRow);
+	// console.log(row1);
+	// console.log(row2);
+	// console.log(row3);
+	// console.log(row4);
 
 // let rowStr = '';
 // const ids = thing1.map(ofThing1 => { }) 
 
-// for (let index in thing1) {
-// 	thing1.map(ofThing1 => {
-// 	return ofThing.type
-// 	})
-// }
+// 
 
 
 // Sum the field 'count' and output the value
@@ -62,7 +61,7 @@ for (i = 0; i < thing1.length; i++) {
 	// console.log(thing1[i]);
 }
 
-console.log(sum);
+// console.log(sum);
 
 
 // Add a row at the beginning of the output with the field names
