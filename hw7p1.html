@@ -22,9 +22,33 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
+    <script>
+        // Change background color
+        function changebkclr(choice) {
+            // target the body to apply color
+            let targetBodyElement = document.getElementById("body");
+            if (choice === 0) {
+                targetBodyElement.className = "green";
+
+            } else if (choice === 1) {
+                targetBodyElement.className = "purple";
+            }
+            else if (choice === 2) {
+                targetBodyElement.className = "red";
+            }
+        }
+
+        // // Reset to original styling
+        // function resetPage() {
+
+        //         let resetbody = document.getElementById("body");
+        //         resetbody.className = "revertBody";
+
+        //     } 
+    </script>
 </head>
 
-<body class="" id="">
+<body class="purple" id="body">
     <!-- insert comments into every homework assignment  -->
     <header class="header">CNIT 133 Homework 7 - Object Model and Event Model</header>
     <div class="container">
@@ -45,12 +69,12 @@
             <form name="hw7p1" class="hw7p1">
                 <h2>Choose an option to change the styling on this page:</h2>
                 <br>
-                <h3>Background Color:</h3><br>
-                <input type="radio" name="bcolor" onclick="changbkclr(0)">Purple
-                <input type="radio" name="bcolor" onclick="changbkclr(1)">Yellow
-                <input type="radio" name="bcolor" onclick="changbkclr(2)">Orange
+                <h3>Background Gradient:</h3><br>
+                <input type="radio" name="bcolor" onclick="changebkclr(0)">Option 1: green
+                <input type="radio" name="bcolor" onclick="changebkclr(1)">Option 2: purple
+                <input type="radio" name="bcolor" onclick="changebkclr(2)">Option 3: orange 
                 <br>
-                <h3>Choose font style:</h3><br>
+                <!-- <h3>Choose font style:</h3><br>
                 <input type="radio" name="fntstyling" onclick="changefontstyle(0)">Italic
                 <input type="radio" name="fntstyling" onclick="changefontstyle(1)">Normal
                 <br>
@@ -65,13 +89,13 @@
                     <option value="small">Small</option>
                     <option value="medium">Medium</option>
                     <option value="large">Large</option>
-                </select>
+                </select> -->
 
             </form>
             <br>
             <input class="black" type="button" value="Reset the page" onclick="resetPage()">
     
-                        <!-- <input type="button" value="Revert to original" onclick="switchToOrig()"> -->
+            <!-- <input type="button" value="Revert to original" onclick="switchToOrig()"> -->
 
         </section>
     </div>

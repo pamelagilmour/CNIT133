@@ -185,6 +185,19 @@ td {
     /* font-kerning:none; */
 }
 
+/* Hw 7 class Name */
+.green {
+    background-image: linear-gradient(to bottom right, #BBBEFE, #387566);
+}
+
+.purple {
+    background-image: linear-gradient(to bottom right, #292348, #230948);
+}
+
+.red {
+    background-image: linear-gradient(to bottom right, #934845, #933);
+}
+
 footer {
     padding-top: 50px;
 }
