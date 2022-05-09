@@ -99,9 +99,21 @@
                 <input type="radio" name="bcolor" onclick="changebkclr(1)">Option 2: purple<br>
                 <input type="radio" name="bcolor" onclick="changebkclr(2)">Option 3: orange
                 <br><br>
+                <!-- Need to make sure: 
+                ...Then, after that choice, in another option you give checkboxes for the user to choose font bold, and/or font italic and the user selects both checkboxes, then the page should maintain the background color chosen from the radio button and apply the new styles (bold font and italicized font) as well. 
+In case of checkboxes, if the user uncheck the mark of a checkbox, the style that was unchecked should be removed from the page or area selected!
+ 
+ -->
                 <h3>Choose font style:</h3>
-                <input type="radio" name="fntstyling" onclick="changefontstyle(0)">Italic
-                <input type="radio" name="fntstyling" onclick="changefontstyle(1)">Normal
+                <input type="checkbox" name="fntstyling" onclick="changefontstyle(0)">Italic
+                <input type="checkbox" name="fntstyling" onclick="changefontstyle(1)">Normal
+                <!-- <input type="checkbox" name="fntstyling" onclick="changefontstyle(1)"> Some other option -->
+                <!-- <h3>Choose font weight:</h3><br>
+                <input type="radio" name="fntweight" onclick="changefontweight(0)">Bold
+                <input type="radio" name="fntweight" onclick="changefontweight(1)">Normal
+                <br>
+                 -->
+
                 <br><br>
                 <h3>Select font size:</h3>
                 <select class="black" name="fontMenu" id="fontMenu" onchange="chooseFontSize()">
@@ -112,14 +124,6 @@
                     <option value="large">Large</option>
                 </select>
                 <br>
-                
-                <!--
-
-                <h3>Choose font weight:</h3><br>
-                <input type="radio" name="fntweight" onclick="changefontweight(0)">Bold
-                <input type="radio" name="fntweight" onclick="changefontweight(1)">Normal
-                <br>
-                 -->
 
             </form>
             <br>
