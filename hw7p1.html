@@ -39,12 +39,27 @@
         }
 
         function changefontstyle(choice) {
-                const targetBodyElement = document.getElementById("body");
+                let targetBodyElement = document.getElementById("body");
                 if (choice == 0) {
                     targetBodyElement.className = "italic";
                 }
                 else if (choice == 1) {
                     targetBodyElement.className = "normal";
+                }
+        }
+
+        function chooseFontSize() {
+                let targetBodyElement = document.getElementById("body");
+                let fntsizeSelect = document.getElementById('fontMenu').value;
+
+                if (fntsizeSelect == "small") {
+                    targetBodyElement.className = "small";
+                }
+                else if (fntsizeSelect == "medium") {
+                    targetBodyElement.className = "medium";
+                }
+                else if (fntsizeSelect == "large") {
+                    targetBodyElement.className = "large";
                 }
             }
 

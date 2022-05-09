@@ -207,6 +207,18 @@ td {
     font-style: normal;
 }
 
+.small {
+    font-size: 11px;
+}
+
+.medium {
+    font-size: 16px;
+}
+
+.large {
+    font-size: 22px;
+}
+
 
 footer {
     padding-top: 50px;
