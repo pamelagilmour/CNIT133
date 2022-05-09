@@ -38,13 +38,23 @@
             }
         }
 
-        // // Reset to original styling
-        // function resetPage() {
+        function changefontstyle(choice) {
+                const targetBodyElement = document.getElementById("body");
+                if (choice == 0) {
+                    targetBodyElement.className = "italic";
+                }
+                else if (choice == 1) {
+                    targetBodyElement.className = "normal";
+                }
+            }
 
-        //         let resetbody = document.getElementById("body");
-        //         resetbody.className = "revertBody";
+        // Reset to original styling
+        function resetPage() {
 
-        //     } 
+                let resetbody = document.getElementById("body");
+                resetbody.className = "revertBody";
+
+            } 
     </script>
 </head>
 
@@ -70,26 +80,31 @@
                 <h2>Choose an option to change the styling on this page:</h2>
                 <br>
                 <h3>Background Gradient:</h3><br>
-                <input type="radio" name="bcolor" onclick="changebkclr(0)">Option 1: green
-                <input type="radio" name="bcolor" onclick="changebkclr(1)">Option 2: purple
-                <input type="radio" name="bcolor" onclick="changebkclr(2)">Option 3: orange 
-                <br>
-                <!-- <h3>Choose font style:</h3><br>
+                <input type="radio" name="bcolor" onclick="changebkclr(0)">Option 1: green<br>
+                <input type="radio" name="bcolor" onclick="changebkclr(1)">Option 2: purple<br>
+                <input type="radio" name="bcolor" onclick="changebkclr(2)">Option 3: orange
+                <br><br>
+                <h3>Choose font style:</h3>
                 <input type="radio" name="fntstyling" onclick="changefontstyle(0)">Italic
                 <input type="radio" name="fntstyling" onclick="changefontstyle(1)">Normal
-                <br>
-                <h3>Choose font weight:</h3><br>
-                <input type="radio" name="fntweight" onclick="changefontweight(0)">Bold
-                <input type="radio" name="fntweight" onclick="changefontweight(1)">Normal
-                <br>
-                <h3>Select font size:</h3><br>
-                <select  class="black" name="fontMenu" id="fontMenu" onchange="chooseFontSize()">
+                <br><br>
+                <h3>Select font size:</h3>
+                <select class="black" name="fontMenu" id="fontMenu" onchange="chooseFontSize()">
                 
                     <option value="#"> Select font size </option>
                     <option value="small">Small</option>
                     <option value="medium">Medium</option>
                     <option value="large">Large</option>
-                </select> -->
+                </select>
+                <br>
+                
+                <!--
+
+                <h3>Choose font weight:</h3><br>
+                <input type="radio" name="fntweight" onclick="changefontweight(0)">Bold
+                <input type="radio" name="fntweight" onclick="changefontweight(1)">Normal
+                <br>
+                 -->
 
             </form>
             <br>

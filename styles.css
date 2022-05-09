@@ -1,4 +1,4 @@
-body {
+body, .revertBody {
     background-image: linear-gradient(to bottom right, #BBBEFE, #E8BFFB);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -186,6 +186,7 @@ td {
 }
 
 /* Hw 7 class Name */
+
 .green {
     background-image: linear-gradient(to bottom right, #BBBEFE, #387566);
 }
@@ -197,6 +198,15 @@ td {
 .red {
     background-image: linear-gradient(to bottom right, #934845, #933);
 }
+
+.italic {
+    font-style: italic;
+}
+
+.normal {
+    font-style: normal;
+}
+
 
 footer {
     padding-top: 50px;
