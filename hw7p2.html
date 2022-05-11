@@ -26,23 +26,25 @@
         $(document).ready(
             function () {
                 // Hide the descriptions for Part 1 and Part 2
-                $('.p1description').hide();
+                // Translate this to the nav bar links, hide them
+                $('.hw7p2nav').hide();
 
-                // Toggle the links titled 'Part 1' and 'Part 2', target by class
-                $('.hw7link').toggle(
-                    function () {
-                        $(this).next('.p1description').slideDown();
-                            $(this).addClass('reset');
-                    },
+    //             // Toggle the links titled 'Part 1' and 'Part 2', target by class
+    //             $('.hw7link').toggle(
+    //                 function () {
+    //                     $(this).next('.p1description').slideDown();
+    //                         $(this).addClass('reset');
+    //                 },
 
-                    function () {
-                        $(this).next('.p1description').fadeOut();
-                        $(this).removeClass('reset');
+    //                 function () {
+    //                     $(this).next('.p1description').fadeOut();
+    //                     $(this).removeClass('reset');
 
-                }
-           )
+    //             }
+    //        )
 
-       }
+            }
+        );
 
     </script>
 </head>
@@ -54,29 +56,29 @@
     <div class="container">
         <section class="col">
             <h1 class="row">Homework Page 7_ Drop down nav menu</h1>
-            <ul class="hw7p2nav" id="hw7nav">
-                <li class="hw7p2nav"><a href="index.html">Home</a></li>
-                <li><a href="hw2.html">Homework 2</a>
-                    <ul>
-                        <li><a href="hw2p1.html">Part 1 : display text</a></li>
+            <ul id="hw7nav">
+                <li style="display: inline;"><a href="index.html">Home</a></li>
+                <li style="display: inline;"><a href="hw2.html">Homework 2</a>
+                    <ul class="hw7p2nav">
+                        <li class="hw7p2nav"><a href="hw2p1.html">Part 1 : display text</a></li>
             
-                        <li><a href="hw2p2.html">Part 2: input 3 integers</a></li>
+                        <li class="hw7p2nav"><a href="hw2p2.html">Part 2: input 3 integers</a></li>
             
-                        <li><a href="hw2p3.html">Part 3: input 5 integers</a></li>
+                        <li class="hw7p2nav"><a href="hw2p3.html">Part 3: input 5 integers</a></li>
             
-                        <li><a href="hw2ec.html">Extra Credit: USD Converter</a></li>
+                        <li class="hw7p2nav"><a href="hw2ec.html">Extra Credit: USD Converter</a></li>
                     </ul>
                 </li>
             
             </ul>
         </section>
             
-            <a class="nav-link" href="hw3.html">Homework 3</a>
+            <!-- <a class="nav-link" href="hw3.html">Homework 3</a>
             <a class="nav-link" href="hw4.html">Homework 4</a>
             <a class="nav-link" href="hw5.html">Homework 5</a>
             <a class="nav-link" href="hw6.html">Homework 6</a>
             <a class="nav-link active" href="hw7.html">Homework 7</a>
-            <a class="nav-link" href="hw8.html">Homework 8</a>
+            <a class="nav-link" href="hw8.html">Homework 8</a> -->
     </div>
     <footer></footer>
 </body>
