@@ -74,6 +74,11 @@ a:link{
 
 }
 
+.hw7p2nav {
+    border-style: none;
+
+}
+
 a:visited {
     color: violet;
 
