@@ -255,6 +255,9 @@ font-family: 'Roboto Mono', monospace;
 } */
 
 /* Homework 7, Part 2 */
+nav {
+    padding-left: 10%;
+}
         
 nav ul li {
     float: left;
