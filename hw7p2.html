@@ -22,65 +22,82 @@
     <link rel="icon" type="image/x-icon" href="fav.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
+
+        $(document).ready(
+            
+        function () {
+
             $('nav li ul').hide();
+
             $('nav li').hover(
+
                 function () {
+
                     $('ul', this).slideDown(500);
+
                 },
+
                 function () {
+
                     $('ul', this).slideUp(200);
+
                 }
+
             );
+
         });
+
+
     </script>
 </head>
 
 <body>
     <!-- insert comments into every homework assignment  -->
     <header class="header">CNIT 133 Homework 7</header>
-    <h1 class="row" style="color: #fff;">Object Model and Event Model</h1>
+    <h1 class="row" style="color: #fff; font-family: 'VT323', monospace;">Object Model and Event Model</h1>
     <!-- HW 6: Change the links to Hw2 - HW6 main pages -->
     <nav>
         <ul>
-            <li><a href="index.html">Homework 1</a></li>
-            <li>
+            <li class="hw7p2li">
+                <a href="index.html">Homework 1</a>
+            </li>
+            <li class="hw7p2li">
                 <a href="hw2.html">Homework 2</a>
-                <ul style="display: none;">
+                <ul class="hw7p2ul">
                     <li><a href="hw2p1.html">Part 1</a></li>
                     <li><a href="hw2p2.html">Part 2</a></li>
                     <li><a href="hw2p3.html">Part 3</a></li>
                     <li><a href="hw2ec.html">Extra Credit</a></li>
                 </ul>
             </li>
-            <li>
+            <li class="hw7p2li">
                 <a href="hw3.html">Homework 3</a>
-                <ul style="display: none;">
+                <ul class="hw7p2ul">
                     <li><a href="hw3p1.html">Part 1</a></li>
                     <li><a href="hw3p2.html">Part 2</a></li>
                     <li><a href="hw3p3.html">Part 3</a></li>
                     <li><a href="hw3p4.html">Part 4</a></li>
                 </ul>
             </li>
-            <li>
+            <li class="hw7p2li">
                 <a href="hw4.html">Homework 4</a>
-                <ul style="display: none;">
+                <ul class="hw7p2ul">
                     <li><a href="hw4p1.html">Part 1</a></li>
                     <li><a href="hw4p2.html">Part 2</a></li>
                     <li><a href="hw4pec.html">Extra Credit</a></li>
                 </ul>
             </li>
-            <li>
+            <li class="hw7p2li">
                 <a href="hw5.html">Homework 5</a>
-                <ul style="display: none;">
+                <ul class="hw7p2ul">
                     <li><a href="hw5p1.html">Part 1</a></li>
                     <li><a href="hw5p2.html">Part 2</a></li>
                     <li><a href="hw5p3.html">Extra Credit</a></li>
                 </ul>
             </li>
-            <li>
+            <li class="hw7p2li">
                 <a href="hw6.html">Homework 6</a>
-                <ul style="display: none;">
+                <ul class="hw7p2ul">
                     <li><a href="hw6p1.html">Part 1</a></li>
                     <li><a href="hw6p2.html">Part 2</a></li>
                     <li><a href="hw6p3.html">Part 3</a></li>

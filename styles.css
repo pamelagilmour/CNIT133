@@ -1,4 +1,5 @@
 body, .revertBody {
+    /* Leave .revertBody for Homework 6 */
     background-image: linear-gradient(to bottom right, #BBBEFE, #E8BFFB);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -255,10 +256,16 @@ font-family: 'Roboto Mono', monospace;
 } */
 
 /* Homework 7, Part 2 */
+
 nav {
     padding-left: 10%;
 }
-        
+
+.hw7p2ul {
+    display: none;
+
+}
+
 nav ul li {
     float: left;
     display: inline;
@@ -274,6 +281,6 @@ nav ul li ul {
     position: absolute;
 }
         
-nav ul li ul li a {
+/* nav ul li ul li a {
     display: block;
-}
+} */
