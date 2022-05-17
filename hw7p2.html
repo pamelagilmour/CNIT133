@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="description" content="CNIT 132: Homework 7">
@@ -23,40 +20,41 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.js"></script>
     <title>Pamela Gilmour : CNIT 133 Homework</title>
     <link rel="icon" type="image/x-icon" href="fav.ico">
-    <!-- <script> -->
-
-
-
-
-    <!-- </script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('nav li ul').hide();
+            $('nav li').hover(
+                function () {
+                    $('ul', this).slideDown(500);
+                },
+                function () {
+                    $('ul', this).slideUp(200);
+                }
+            );
+        });
+    </script>
 </head>
 
 <body>
     <!-- insert comments into every homework assignment  -->
-    <header class="header">CNIT 133 Homework 7 - Object Model and Event Model</header>
+    <header class="header">CNIT 133 Homework 7</header>
+    <h1 class="row" style="color: #fff;">Object Model and Event Model</h1>
     <!-- HW 6: Change the links to Hw2 - HW6 main pages -->
-    <div class="container">
-        <section class="col">
-            <h1 class="row">Homework Page 7_ Drop down nav menu</h1>
-            <nav style="display: inline;">
-                <a class="#" href="hw3.html">Homework 3</a>
-                <!-- <ul>
-                    <li><a href="hw3p1.html">Part 1: Student Grades</a></li>
-                    <li><a href="hw3p2.html">Part 2: Calculate Commission</a></li>
-                    <li><a href="hw3p3.html">Part 3: Convert to Celsius or Fahrenheit</a></li>
-                    <li><a href="hw3p4.html">Part 4: Learn Multiplication</a></li>
-                </ul> -->
-                <a class="#" href="hw4.html">Homework 4</a>
-                <a class="#" href="hw5.html">Homework 5</a>
-                <a class="#" href="hw6.html">Homework 6</a>
-                <a class="#" href="hw7.html">Homework 7</a>
-                <a class="#" href="hw8.html">Homework 8</a>
-
-            </nav>
-            
-
-    </div>
-    <footer></footer>
+    <nav>
+        <ul>
+            <li><a href="index.html">Homework 1</a></li>
+            <li>
+                <a href="hw2.html">Homework 2</a>
+                <ul style="display: none;">
+                    <li><a href="hw2p1.html">Part 1</a></li>
+                    <li><a href="hw2p2.html">Part 2</a></li>
+                    <li><a href="hw2p3.html">Part 3</a></li>
+                    <li><a href="hw2ec.html">Extra Credit</a></li>
+                </ul>
+            </li>
+            <li><a href="hw3.html">Homework 3</a></li>
+        </ul>
+    </nav>
 </body>
-
 </html>
