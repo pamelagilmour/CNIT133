@@ -63,9 +63,40 @@
                     <input class="black" type="text" id="fname" name="fname" onkeyup="showHint(this.value)">
                 </form><br><br>
                 <p>Suggestions: <span id="txtHint"></span></p>
-            </section>
+            </section><br><br>
+            <hr>
             <section>
-                <!-- your paragraph or table should contain at least the following information: What type of response file you get (JSON, XML, etc.)? Do you need any type of key to access and use the API? You need also to provide a link to any type of documentation that would help the developer use the API. -->
+                <!-- Include in that page a paragraph presenting a REST API that you could use in an application and the URL to the documentation of that API  -->
+                <h2 id="hw8APIheading">Discogs API: </h2>
+                <a id="hw8Link" href="https://www.discogs.com/developers">Link to Documentation</a>
+
+                <!-- Your paragraph or table should contain at least the following information: -->
+                <table id="hw8table" style=""> 
+                    <tr>
+                    <!--    What type of response file you get (JSON, XML, etc.)? -->
+                        <th>Type of Response</th>
+                        <td>#</td>
+                
+                    </tr>
+                    <tr>
+                    <!--    Do you need any type of key to access and use the API? -->
+                        <th>Need a key?</th>
+                        <td>#</td>
+                    </tr>
+                    <tr>
+                    <!-- You need also to provide a link to any type of documentation that would help the developer use the API. -->
+                        <th>Link to Documentation</th>
+                        <td>#</td>
+                    </tr>
+                
+                </table>
+
+
+
+
+
+
+
         </div>
         <footer></footer>
     </body>
