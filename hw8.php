@@ -40,10 +40,6 @@
 </script>
     </head>
     <body>
-        <!-- <?php
-            // echo "Hello World";
-        ?>
-         -->
         <!-- insert comments into every homework assignment  -->
         <header class="header">CNIT 133 Homework - Ajax Applications</header>
         <div class="container">
