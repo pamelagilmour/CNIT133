@@ -238,7 +238,7 @@ font-family: 'Roboto Mono', monospace;
 @media screen and (max-width: 992px) {
     a:link {
         color: purple;
-        padding: 0;
+        padding: 0%;
         border-style: none;
         border-radius: 0;
     }
@@ -284,3 +284,40 @@ nav ul li ul {
 /* nav ul li ul li a {
     display: block;
 } */
+
+/* HW8 Styling */
+
+hr {
+    padding-bottom: 5%;
+}
+
+#hw8Link {
+    border: none;
+    color: purple;
+    font-size: medium;
+
+}
+
+#hw8table {
+    width: 30%;
+    border-collapse: collapse;
+
+}
+
+#hw8table td,
+#hw8table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#hw8Linkhead {
+    border: none;
+    /* border-radius: 0; */
+    color: purple;
+    font-size: small;
+    padding: 0%;
+    margin: 0%;
+
+
+}
